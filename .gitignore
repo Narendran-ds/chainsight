@@ -1,0 +1,36 @@
+# ==== Datasets (Roboflow-sourced, don't redistribute) ====
+data/raw/
+data/processed/
+data/interim/
+*.cache
+
+# ==== Model weights (keep only the winning checkpoint tracked manually) ====
+models/finetuned/run1_baseline/weights/*.pt
+models/finetuned/run2_50epoch/
+models/finetuned/run3_final/
+models/finetuned/*/weights/last.pt
+
+# Keep only the final best.pt for the winning run — comment this out
+# once you `git add -f` the specific file you want to keep:
+# models/finetuned/run2_exit_marker/weights/best.pt
+
+# ==== Validation / run artifacts (regenerable) ====
+runs/
+models/finetuned/*/weights/epoch*.pt
+
+# ==== Python ====
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+
+# ==== OS / Editor ====
+.vscode/
+.DS_Store
+Thumbs.db
+
+# ==== Logs ====
+*.log
