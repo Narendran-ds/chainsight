@@ -1,0 +1,63 @@
+run_name: run2_exit_marker
+timestamp: '2026-07-09T10:59:59'
+hyperparameters:
+  model: yolov8s.pt
+  epochs: 100
+  imgsz: 640
+  batch: 16
+  patience: 15
+  device: '0'
+  workers: 4
+  cache: false
+  seed: 42
+  lr0: 0.01
+  lrf: 0.01
+  optimizer: auto
+  amp: true
+  resume: false
+environment:
+  python_version: 3.9.13
+  torch_version: 2.5.1+cu121
+  cuda_available: true
+  platform: Windows-10-10.0.26200-SP0
+  ultralytics_version: 8.4.90
+  gpu_name: NVIDIA GeForce RTX 4060 Laptop GPU
+  cuda_version: '12.1'
+  gpu_memory_total_mb: 8188
+dataset:
+  root: E:\Nari\Naren\chainsight\data\processed\chainsight_dataset
+  nc: 17
+  names:
+    0: forklift
+    1: person
+    2: pallet
+    3: box
+    4: damaged_box
+    5: open_box
+    6: package
+    7: barcode
+    8: helmet
+    9: no_helmet
+    10: vest
+    11: no_vest
+    12: glove
+    13: safety_boot
+    14: pallet_jack
+    15: small_load_carrier
+    16: exit_zone_marker
+  splits:
+    train:
+      images: 10575
+      labels: 10575
+      missing_labels: 0
+      empty_images: 0
+    val:
+      images: 2020
+      labels: 2020
+      missing_labels: 0
+      empty_images: 0
+    test:
+      images: 1136
+      labels: 1136
+      missing_labels: 0
+      empty_images: 0

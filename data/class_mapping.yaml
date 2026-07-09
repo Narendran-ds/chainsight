@@ -1,0 +1,145 @@
+# ==============================================================================
+# ChainSight — Master Class Reconciliation Map (CORRECTED — based on real data.yaml files)
+# ==============================================================================
+# Source class lists confirmed directly from each dataset's data.yaml on 2026-07-07.
+# Updated 2026-07-09 to add exit_dataset_1 and exit_dataset_2 (exit_zone_marker support).
+# ==============================================================================
+
+master_classes:
+  0: forklift
+  1: person
+  2: pallet
+  3: box
+  4: damaged_box
+  5: open_box
+  6: package
+  7: barcode
+  8: helmet
+  9: no_helmet
+  10: vest
+  11: no_vest
+  12: glove
+  13: safety_boot
+  14: pallet_jack
+  15: small_load_carrier
+  16: exit_zone_marker
+
+# ------------------------------------------------------------------------------
+# Per-source mapping: source_class_name -> master_class_name
+# ------------------------------------------------------------------------------
+
+source_datasets:
+
+  arvist:
+    original_data_yaml: data/raw/arvist/data.yaml
+    original_classes:
+      [bicycle, bus, car, forklift, glove, helmet, motorcycle, no-helmet,
+       no-vest, pallet, pallet-jack, person, safety-boot, small-load-carrier,
+       truck, vest]
+    mapping:
+      forklift: forklift
+      person: person
+      pallet: pallet
+      glove: glove
+      helmet: helmet
+      no-helmet: no_helmet
+      vest: vest
+      no-vest: no_vest
+      safety-boot: safety_boot
+      pallet-jack: pallet_jack
+      small-load-carrier: small_load_carrier
+    excluded_classes:
+      # Traffic/vehicle classes irrelevant to warehouse-interior causal
+      # scenarios. Any image whose ONLY annotated classes fall in this list
+      # must be dropped entirely during merge (see prepare_data.py).
+      - bicycle
+      - bus
+      - car
+      - motorcycle
+      - truck
+
+  forklift:
+    original_data_yaml: data/raw/forklift/data.yaml
+    original_classes: [forklift, human]
+    mapping:
+      forklift: forklift
+      human: person
+    excluded_classes: []
+
+  pallet:
+    original_data_yaml: data/raw/pallet/data.yaml
+    original_classes: [Barcode, Box, Damaged_Box, Open_Box, Package]
+    mapping:
+      Barcode: barcode
+      Box: box
+      Damaged_Box: damaged_box
+      Open_Box: open_box
+      Package: package
+    excluded_classes: []
+    note: >
+      Despite being named "Warehouse Pallet," this dataset contains NO pallet
+      class. It is a box/package-condition dataset (barcode, box, damaged,
+      open, package). Do not assume pallet-detection support from this source.
+
+  exit_dataset_1:
+    original_data_yaml: data/raw/exit_dataset_1/data.yaml
+    original_classes: [Exit, Exit-Project]
+    mapping:
+      Exit: exit_zone_marker
+      Exit-Project: exit_zone_marker
+    excluded_classes: []
+    note: >
+      Roboflow project exit-1cd6u (forked as exit-1cd6u-qcrq8), 431 images.
+      Real-world photographed exit signage (wall/ceiling-mounted running-man
+      and text-based EXIT signs), not warehouse-specific. CC BY 4.0.
+
+  exit_dataset_2:
+    original_data_yaml: data/raw/exit_dataset_2/data.yaml
+    original_classes: [Exit_broken, exit sign clear, exit sign fadee]
+    mapping:
+      Exit_broken: exit_zone_marker
+      exit sign clear: exit_zone_marker
+      exit sign fadee: exit_zone_marker
+    excluded_classes: []
+    note: >
+      Roboflow project exit-5zkdb (dental-disease-detection-7y15w workspace),
+      178 images. Real-world photographed illuminated exit signage, various
+      condition states (clear/faded/broken) all folded into one target class
+      since exit_zone_marker only needs marker location, not sign condition.
+      CC BY 4.0.
+
+# ------------------------------------------------------------------------------
+# Coverage gaps to be aware of before training
+# ------------------------------------------------------------------------------
+coverage_notes:
+  pallet: >
+    Only supported by the Arvist dataset. No secondary source. If pallet
+    detection accuracy is poor after fine-tuning, there is no fallback
+    dataset already downloaded — would require sourcing an additional
+    pallet-specific dataset.
+  exit_zone_marker: >
+    Now supported by two merged Roboflow sources (exit_dataset_1: 431 images,
+    exit_dataset_2: 178 images), replacing the earlier plan to rely solely on
+    manual annotation of self-staged clips. Combined ~609 raw images before
+    filtering/splitting. Domain is real-world photographed exit signage
+    (not warehouse-specific), so some cross-domain generalization gap is
+    expected — flagged for review after first training run with this class.
+
+# ------------------------------------------------------------------------------
+# Filtering requirement (required due to Arvist's mixed-domain content)
+# ------------------------------------------------------------------------------
+filtering_required:
+  dataset: arvist
+  reason: >
+    Arvist's test/train/valid splits contain traffic/road images (cars,
+    buses, motorcycles on highways) mixed in with genuine warehouse-interior
+    images. Confirmed visually on 2026-07-07.
+  rule: >
+    For every image in arvist/{train,valid,test}, inspect its corresponding
+    label .txt file. If every bounding box in that file belongs to an
+    excluded_class (bicycle, bus, car, motorcycle, truck), DROP the image
+    and its label file from the merge. If the image contains at least one
+    non-excluded class (forklift, person, pallet, PPE, etc.), KEEP it —
+    but still strip out the excluded-class bounding boxes from that label
+    file before remapping, since a warehouse image might have a car visible
+    in the background through a loading dock door.

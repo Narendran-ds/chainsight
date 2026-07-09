@@ -1,0 +1,48 @@
+# ==============================================================================
+# ChainSight — Python Dependencies
+# Tested on Python 3.9+ | CUDA 11.8+ recommended for GPU inference/training
+# ==============================================================================
+
+# ---- Vision Layer (Detection + Tracking) ------------------------------------
+ultralytics==8.2.103          # YOLOv8 training + inference
+torch==2.3.1                  # PyTorch backend (install CUDA build separately if needed)
+torchvision==0.18.1
+opencv-python==4.10.0.84
+bytetracker==0.3.2            # ByteTrack multi-object tracking
+
+# ---- Spatial Layer -----------------------------------------------------------
+shapely==2.0.5                # Zone polygons, overlap/intersection geometry
+numpy==1.26.4
+
+# ---- World Graph Layer --------------------------------------------------------
+networkx==3.3                 # Graph construction + traversal
+
+# ---- Rule Engine Layer ---------------------------------------------------------
+pydantic==2.8.2                # Structured, validated event/rule objects
+
+# ---- Narration Layer (Constrained LLM) ----------------------------------------
+google-generativeai==0.7.2     # Gemini API client
+openai==1.40.0                 # Used only if routing NVIDIA NIM via OpenAI-compatible endpoint
+
+# ---- Experiment Tracking -------------------------------------------------------
+wandb==0.17.5                  # Weights & Biases — training run tracking
+
+# ---- Demo / UI Layer -----------------------------------------------------------
+streamlit==1.37.0
+streamlit-timeline==0.0.2
+
+# ---- Config + Environment -------------------------------------------------------
+python-dotenv==1.0.1            # Load .env for API keys
+pyyaml==6.0.2                   # zones_config.yaml, rules_config.yaml, train_config.yaml
+
+# ---- Data Handling ---------------------------------------------------------------
+pandas==2.2.2
+scikit-learn==1.5.1              # train_test_split for dataset splitting
+
+# ---- Testing --------------------------------------------------------------------
+pytest==8.3.2
+pytest-mock==3.14.0
+
+# ---- Dev Tooling (optional but recommended) --------------------------------------
+black==24.8.0                    # Code formatting
+ruff==0.5.7                      # Linting
