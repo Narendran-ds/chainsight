@@ -1,0 +1,3238 @@
+{
+  "frames": {
+    "0": [
+      {
+        "timestamp": 0.0,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          426.0711364746094,
+          105.47860717773438
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "1": [
+      {
+        "timestamp": 0.04,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          426.1934814453125,
+          103.89581298828125
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "2": [
+      {
+        "timestamp": 0.08,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          427.21221923828125,
+          102.65693664550781
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "3": [
+      {
+        "timestamp": 0.12,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          428.35760498046875,
+          101.24455261230469
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "4": [
+      {
+        "timestamp": 0.16,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          428.6325988769531,
+          100.33619689941406
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "5": [
+      {
+        "timestamp": 0.2,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          428.14483642578125,
+          98.03740692138672
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "6": [
+      {
+        "timestamp": 0.24,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          427.77545166015625,
+          94.96342468261719
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "7": [
+      {
+        "timestamp": 0.28,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          427.6720275878906,
+          93.85670471191406
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "8": [
+      {
+        "timestamp": 0.32,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          427.57501220703125,
+          92.91778564453125
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "9": [
+      {
+        "timestamp": 0.36,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          427.2679443359375,
+          91.7734146118164
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "10": [
+      {
+        "timestamp": 0.4,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          426.58441162109375,
+          91.4832763671875
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "11": [
+      {
+        "timestamp": 0.44,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          426.13287353515625,
+          90.93443298339844
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "12": [
+      {
+        "timestamp": 0.48,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          425.90185546875,
+          89.63402557373047
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "13": [
+      {
+        "timestamp": 0.52,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          425.60992431640625,
+          90.1084213256836
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "14": [
+      {
+        "timestamp": 0.56,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          425.248779296875,
+          89.18110656738281
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "15": [
+      {
+        "timestamp": 0.6,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          424.72821044921875,
+          88.35662841796875
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "16": [
+      {
+        "timestamp": 0.64,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          423.9938049316406,
+          87.468017578125
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "17": [
+      {
+        "timestamp": 0.68,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          423.4815673828125,
+          87.00030517578125
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "18": [
+      {
+        "timestamp": 0.72,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          423.3050842285156,
+          86.78414916992188
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "19": [
+      {
+        "timestamp": 0.76,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          423.234375,
+          86.14028930664062
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "20": [
+      {
+        "timestamp": 0.8,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          423.2484130859375,
+          85.5591049194336
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "21": [
+      {
+        "timestamp": 0.84,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          423.2008056640625,
+          85.54598999023438
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "22": [
+      {
+        "timestamp": 0.88,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          422.7934875488281,
+          85.24388122558594
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "23": [
+      {
+        "timestamp": 0.92,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          422.38427734375,
+          83.87101745605469
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "24": [
+      {
+        "timestamp": 0.96,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          422.1273193359375,
+          83.14258575439453
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "25": [
+      {
+        "timestamp": 1.0,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          422.0776672363281,
+          82.0655517578125
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "26": [
+      {
+        "timestamp": 1.04,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.47821044921875,
+          82.07920837402344
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "27": [
+      {
+        "timestamp": 1.08,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.43408203125,
+          82.16410827636719
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "28": [
+      {
+        "timestamp": 1.12,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.4378967285156,
+          82.84005737304688
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "29": [
+      {
+        "timestamp": 1.16,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.7049560546875,
+          83.68345642089844
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "30": [
+      {
+        "timestamp": 1.2,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.70672607421875,
+          83.21658325195312
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "31": [
+      {
+        "timestamp": 1.24,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.60498046875,
+          82.68281555175781
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "32": [
+      {
+        "timestamp": 1.28,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.9726257324219,
+          82.82660675048828
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "33": [
+      {
+        "timestamp": 1.32,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          422.27264404296875,
+          82.75922393798828
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "34": [
+      {
+        "timestamp": 1.36,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          422.35516357421875,
+          82.46443939208984
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "35": [
+      {
+        "timestamp": 1.4,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          422.7334289550781,
+          82.1053695678711
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "36": [
+      {
+        "timestamp": 1.44,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          422.9928283691406,
+          81.81068420410156
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "37": [
+      {
+        "timestamp": 1.48,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          423.470947265625,
+          80.97853088378906
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "38": [
+      {
+        "timestamp": 1.52,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          423.0041198730469,
+          81.02098846435547
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "39": [
+      {
+        "timestamp": 1.56,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          422.949462890625,
+          82.19166564941406
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "40": [
+      {
+        "timestamp": 1.6,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          422.7630615234375,
+          82.98096466064453
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "41": [
+      {
+        "timestamp": 1.64,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          422.33892822265625,
+          83.63299560546875
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "42": [
+      {
+        "timestamp": 1.68,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.8133544921875,
+          83.46033477783203
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "43": [
+      {
+        "timestamp": 1.72,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.35467529296875,
+          82.60426330566406
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "44": [
+      {
+        "timestamp": 1.76,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.0257568359375,
+          82.37130737304688
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "45": [
+      {
+        "timestamp": 1.8,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.177001953125,
+          82.20692443847656
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "46": [
+      {
+        "timestamp": 1.84,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.0823974609375,
+          81.97958374023438
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "47": [
+      {
+        "timestamp": 1.88,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.2052307128906,
+          81.89031982421875
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "48": [
+      {
+        "timestamp": 1.92,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.292724609375,
+          81.21753692626953
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "49": [
+      {
+        "timestamp": 1.96,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          420.72454833984375,
+          79.96206665039062
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "50": [
+      {
+        "timestamp": 2.0,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          420.3310546875,
+          79.6352767944336
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "51": [
+      {
+        "timestamp": 2.04,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          420.22076416015625,
+          77.6933364868164
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "52": [
+      {
+        "timestamp": 2.08,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          420.10870361328125,
+          75.44874572753906
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "53": [
+      {
+        "timestamp": 2.12,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          420.07855224609375,
+          74.10940551757812
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "54": [
+      {
+        "timestamp": 2.16,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          420.0945739746094,
+          74.69518280029297
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "55": [
+      {
+        "timestamp": 2.2,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          420.1689147949219,
+          74.0553970336914
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "56": [
+      {
+        "timestamp": 2.24,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          419.69915771484375,
+          70.97496795654297
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "57": [
+      {
+        "timestamp": 2.28,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          419.3367919921875,
+          68.92212677001953
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "58": [
+      {
+        "timestamp": 2.32,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          419.3135986328125,
+          66.17217254638672
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "59": [
+      {
+        "timestamp": 2.36,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          419.19464111328125,
+          64.96685791015625
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "60": [
+      {
+        "timestamp": 2.4,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          418.56365966796875,
+          64.3025131225586
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "61": [
+      {
+        "timestamp": 2.44,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          417.98211669921875,
+          63.748252868652344
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "62": [
+      {
+        "timestamp": 2.48,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          417.8876953125,
+          63.386783599853516
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "63": [
+      {
+        "timestamp": 2.52,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          417.9627380371094,
+          63.05604934692383
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "64": [
+      {
+        "timestamp": 2.56,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          417.39471435546875,
+          63.24285125732422
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "65": [
+      {
+        "timestamp": 2.6,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          416.5399475097656,
+          60.70909881591797
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "66": [
+      {
+        "timestamp": 2.64,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          416.5939025878906,
+          57.15972137451172
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "67": [
+      {
+        "timestamp": 2.68,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          416.60565185546875,
+          55.21598815917969
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "68": [
+      {
+        "timestamp": 2.72,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          416.131103515625,
+          53.5913200378418
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "69": [
+      {
+        "timestamp": 2.76,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          415.6080322265625,
+          53.20500183105469
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "70": [
+      {
+        "timestamp": 2.8,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          415.17572021484375,
+          53.82073211669922
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "71": [
+      {
+        "timestamp": 2.84,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          414.9884033203125,
+          52.943321228027344
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "72": [
+      {
+        "timestamp": 2.88,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          415.1941833496094,
+          51.045284271240234
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "73": [
+      {
+        "timestamp": 2.92,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          415.05389404296875,
+          49.71928405761719
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "74": [
+      {
+        "timestamp": 2.96,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          414.98944091796875,
+          49.02739715576172
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "75": [
+      {
+        "timestamp": 3.0,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          414.9817199707031,
+          48.47616195678711
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "76": [
+      {
+        "timestamp": 3.04,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          415.10040283203125,
+          47.55925750732422
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "77": [
+      {
+        "timestamp": 3.08,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          415.35101318359375,
+          46.95717239379883
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "78": [
+      {
+        "timestamp": 3.12,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          415.57745361328125,
+          46.00291061401367
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "79": [
+      {
+        "timestamp": 3.16,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          415.9154357910156,
+          45.445621490478516
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "80": [
+      {
+        "timestamp": 3.2,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          416.1941223144531,
+          44.83753204345703
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "81": [
+      {
+        "timestamp": 3.24,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          416.40924072265625,
+          44.41719055175781
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "82": [
+      {
+        "timestamp": 3.28,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          416.72259521484375,
+          44.23268127441406
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "83": [
+      {
+        "timestamp": 3.32,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          417.03753662109375,
+          43.73963928222656
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "84": [
+      {
+        "timestamp": 3.36,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          417.30743408203125,
+          43.5743522644043
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "85": [
+      {
+        "timestamp": 3.4,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          417.8717041015625,
+          42.98785400390625
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "86": [
+      {
+        "timestamp": 3.44,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          418.09490966796875,
+          42.32776641845703
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "87": [
+      {
+        "timestamp": 3.48,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          419.136474609375,
+          41.84440231323242
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "88": [
+      {
+        "timestamp": 3.52,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          419.63507080078125,
+          41.69101333618164
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "89": [
+      {
+        "timestamp": 3.56,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          419.6282653808594,
+          41.47350311279297
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "90": [
+      {
+        "timestamp": 3.6,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          419.89837646484375,
+          41.86060333251953
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.6,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          289.7745056152344,
+          307.70074462890625
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "91": [
+      {
+        "timestamp": 3.64,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          420.41448974609375,
+          41.52597427368164
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.64,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          290.4609375,
+          307.7359924316406
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "92": [
+      {
+        "timestamp": 3.68,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          420.64654541015625,
+          40.46030044555664
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "93": [
+      {
+        "timestamp": 3.72,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.10003662109375,
+          39.56250762939453
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "94": [
+      {
+        "timestamp": 3.76,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.7498779296875,
+          38.699615478515625
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "95": [
+      {
+        "timestamp": 3.8,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          422.119873046875,
+          37.92251205444336
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "96": [
+      {
+        "timestamp": 3.84,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          422.41717529296875,
+          36.42165756225586
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.84,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          300.2583923339844,
+          305.9978332519531
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "97": [
+      {
+        "timestamp": 3.88,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          423.1545715332031,
+          35.701114654541016
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.88,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          297.6552734375,
+          305.6486511230469
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "98": [
+      {
+        "timestamp": 3.92,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          423.3566589355469,
+          35.810001373291016
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.92,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          298.737548828125,
+          305.4029541015625
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "99": [
+      {
+        "timestamp": 3.96,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          423.8747863769531,
+          34.758094787597656
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.96,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          300.9779052734375,
+          304.6469421386719
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "100": [
+      {
+        "timestamp": 4.0,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          424.4297180175781,
+          32.29012680053711
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "101": [
+      {
+        "timestamp": 4.04,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          424.76092529296875,
+          29.44896697998047
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "102": [
+      {
+        "timestamp": 4.08,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          425.03106689453125,
+          26.968534469604492
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "103": [
+      {
+        "timestamp": 4.12,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          425.352294921875,
+          25.26909637451172
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "104": [
+      {
+        "timestamp": 4.16,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          425.63885498046875,
+          24.952037811279297
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.16,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          296.232421875,
+          300.712158203125
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "105": [
+      {
+        "timestamp": 4.2,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          426.102294921875,
+          24.767248153686523
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.2,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          294.6025085449219,
+          300.44830322265625
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "106": [
+      {
+        "timestamp": 4.24,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          426.115966796875,
+          25.613008499145508
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "107": [
+      {
+        "timestamp": 4.28,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          426.37030029296875,
+          24.592548370361328
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "108": [
+      {
+        "timestamp": 4.32,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          426.59381103515625,
+          24.232677459716797
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "109": [
+      {
+        "timestamp": 4.36,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          427.0584411621094,
+          23.626657485961914
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.36,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          293.1437683105469,
+          300.5632629394531
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "110": [
+      {
+        "timestamp": 4.4,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          428.26312255859375,
+          23.302762985229492
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "111": [
+      {
+        "timestamp": 4.44,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          429.2487487792969,
+          23.215429306030273
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.44,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          292.51898193359375,
+          298.81103515625
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "112": [
+      {
+        "timestamp": 4.48,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.0184326171875,
+          23.12173080444336
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.48,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          292.8300476074219,
+          298.0522766113281
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "113": [
+      {
+        "timestamp": 4.52,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.72857666015625,
+          22.223613739013672
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.52,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          295.0023193359375,
+          297.29742431640625
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "114": [
+      {
+        "timestamp": 4.56,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          431.10296630859375,
+          22.326499938964844
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.56,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          297.5157470703125,
+          296.47906494140625
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "115": [
+      {
+        "timestamp": 4.6,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          431.5403747558594,
+          22.025676727294922
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.6,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          297.6632080078125,
+          295.0525207519531
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "116": [
+      {
+        "timestamp": 4.64,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          431.96923828125,
+          21.58778953552246
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.64,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          299.1033630371094,
+          293.7958679199219
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "117": [
+      {
+        "timestamp": 4.68,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          432.17718505859375,
+          21.201114654541016
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.68,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          300.0370178222656,
+          293.36541748046875
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "118": [
+      {
+        "timestamp": 4.72,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          432.468505859375,
+          21.076438903808594
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.72,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          299.72442626953125,
+          293.4851379394531
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "119": [
+      {
+        "timestamp": 4.76,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          432.7615051269531,
+          21.013206481933594
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.76,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          298.8763427734375,
+          293.37890625
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "120": [
+      {
+        "timestamp": 4.8,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          433.14947509765625,
+          21.49582290649414
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "121": [
+      {
+        "timestamp": 4.84,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          433.3984375,
+          21.915752410888672
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "122": [
+      {
+        "timestamp": 4.88,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          433.49163818359375,
+          22.814823150634766
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.88,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          297.6666259765625,
+          295.11279296875
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "123": [
+      {
+        "timestamp": 4.92,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          433.39739990234375,
+          23.13499641418457
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.92,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          295.59027099609375,
+          296.39093017578125
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "124": [
+      {
+        "timestamp": 4.96,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          433.2602844238281,
+          23.635488510131836
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.96,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          295.31494140625,
+          297.6481018066406
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "125": [
+      {
+        "timestamp": 5.0,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          432.992431640625,
+          23.645204544067383
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.0,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          295.61248779296875,
+          298.2825927734375
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "126": [
+      {
+        "timestamp": 5.04,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          432.5689697265625,
+          23.337127685546875
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.04,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          295.4943542480469,
+          299.64251708984375
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "127": [
+      {
+        "timestamp": 5.08,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          432.2577209472656,
+          22.877288818359375
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.08,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          294.49176025390625,
+          300.50250244140625
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "128": [
+      {
+        "timestamp": 5.12,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          431.6163635253906,
+          22.943622589111328
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.12,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          293.8546142578125,
+          301.29266357421875
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "129": [
+      {
+        "timestamp": 5.16,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          431.25335693359375,
+          22.982379913330078
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.16,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          293.3368225097656,
+          301.8291931152344
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "130": [
+      {
+        "timestamp": 5.2,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          431.1706848144531,
+          22.992000579833984
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.2,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          293.2208251953125,
+          302.0127258300781
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "131": [
+      {
+        "timestamp": 5.24,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          431.11224365234375,
+          22.804113388061523
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.24,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          293.7358093261719,
+          301.97576904296875
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "132": [
+      {
+        "timestamp": 5.28,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          431.11126708984375,
+          23.003559112548828
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.28,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          294.5359802246094,
+          302.35455322265625
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "133": [
+      {
+        "timestamp": 5.32,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          431.07489013671875,
+          23.115633010864258
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.32,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          293.7057189941406,
+          301.6593322753906
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "134": [
+      {
+        "timestamp": 5.36,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.8052978515625,
+          23.151357650756836
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.36,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          293.43096923828125,
+          301.603271484375
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "135": [
+      {
+        "timestamp": 5.4,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.7156982421875,
+          23.098539352416992
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.4,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          293.8510437011719,
+          300.7193603515625
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "136": [
+      {
+        "timestamp": 5.44,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.564208984375,
+          23.248504638671875
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.44,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          293.3998718261719,
+          300.73193359375
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "137": [
+      {
+        "timestamp": 5.48,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.4423522949219,
+          23.382896423339844
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.48,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          292.31158447265625,
+          300.1160888671875
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "138": [
+      {
+        "timestamp": 5.52,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.54156494140625,
+          23.32399559020996
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.52,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          291.1812438964844,
+          300.44091796875
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "139": [
+      {
+        "timestamp": 5.56,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.46087646484375,
+          23.035829544067383
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.56,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          290.37005615234375,
+          299.7239990234375
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "140": [
+      {
+        "timestamp": 5.6,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.4803771972656,
+          22.83611297607422
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.6,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          289.51287841796875,
+          299.55059814453125
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "141": [
+      {
+        "timestamp": 5.64,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.57159423828125,
+          23.214447021484375
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.64,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          288.7870788574219,
+          298.386962890625
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "142": [
+      {
+        "timestamp": 5.68,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.43426513671875,
+          23.64781379699707
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.68,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          288.6719665527344,
+          297.36309814453125
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "143": [
+      {
+        "timestamp": 5.72,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.2076416015625,
+          22.96343994140625
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.72,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          287.2864074707031,
+          297.2531433105469
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "144": [
+      {
+        "timestamp": 5.76,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.19744873046875,
+          22.64656639099121
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.76,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          286.2930908203125,
+          296.2127685546875
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "145": [
+      {
+        "timestamp": 5.8,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.18487548828125,
+          22.462215423583984
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.8,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          285.74615478515625,
+          294.75640869140625
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "146": [
+      {
+        "timestamp": 5.84,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.1949462890625,
+          22.57328224182129
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.84,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          285.4810485839844,
+          294.816650390625
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "147": [
+      {
+        "timestamp": 5.88,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.20123291015625,
+          22.42746353149414
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "148": [
+      {
+        "timestamp": 5.92,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.1287841796875,
+          22.351579666137695
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "149": [
+      {
+        "timestamp": 5.96,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          430.0404052734375,
+          21.94824981689453
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "150": [
+      {
+        "timestamp": 6.0,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          429.77435302734375,
+          22.31353187561035
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "151": [
+      {
+        "timestamp": 6.04,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          429.5727844238281,
+          22.592870712280273
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "152": [
+      {
+        "timestamp": 6.08,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          429.087158203125,
+          23.467910766601562
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "153": [
+      {
+        "timestamp": 6.12,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          428.900146484375,
+          23.89037322998047
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "154": [
+      {
+        "timestamp": 6.16,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          428.6678466796875,
+          24.153024673461914
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "155": [
+      {
+        "timestamp": 6.2,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          428.0665283203125,
+          24.26874542236328
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "156": [
+      {
+        "timestamp": 6.24,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          427.50048828125,
+          24.626834869384766
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 6.24,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          296.8888854980469,
+          297.6287536621094
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "157": [
+      {
+        "timestamp": 6.28,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          427.1688232421875,
+          24.56548500061035
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 6.28,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          298.818115234375,
+          298.81500244140625
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "158": [
+      {
+        "timestamp": 6.32,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          426.44647216796875,
+          24.79888153076172
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "159": [
+      {
+        "timestamp": 6.36,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          426.03271484375,
+          24.039623260498047
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "160": [
+      {
+        "timestamp": 6.4,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          425.4251403808594,
+          24.10854148864746
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "161": [
+      {
+        "timestamp": 6.44,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          424.59307861328125,
+          24.23642349243164
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 6.44,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          293.3315124511719,
+          299.7109680175781
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "162": [
+      {
+        "timestamp": 6.48,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          424.02691650390625,
+          24.14543914794922
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 6.48,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          290.0128479003906,
+          299.7774658203125
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "163": [
+      {
+        "timestamp": 6.52,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          423.33447265625,
+          23.823230743408203
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 6.52,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          288.1782531738281,
+          299.3662414550781
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "164": [
+      {
+        "timestamp": 6.56,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          422.7657470703125,
+          23.86153221130371
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 6.56,
+        "track_id": 3,
+        "class_name": "box",
+        "centroid": [
+          283.0895080566406,
+          299.6507568359375
+        ],
+        "zones_inside": [
+          "exit_zone"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "165": [
+      {
+        "timestamp": 6.6,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          422.0566711425781,
+          23.8338680267334
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "166": [
+      {
+        "timestamp": 6.64,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          421.16571044921875,
+          24.16412925720215
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "167": [
+      {
+        "timestamp": 6.68,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          420.27862548828125,
+          24.29735565185547
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "168": [
+      {
+        "timestamp": 6.72,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          419.66375732421875,
+          25.266326904296875
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "169": [
+      {
+        "timestamp": 6.76,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          419.1220703125,
+          25.724536895751953
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "170": [
+      {
+        "timestamp": 6.8,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          418.1938171386719,
+          25.652891159057617
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "171": [
+      {
+        "timestamp": 6.84,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          417.18359375,
+          24.82791519165039
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "172": [
+      {
+        "timestamp": 6.88,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          416.7064208984375,
+          24.779237747192383
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "173": [
+      {
+        "timestamp": 6.92,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          416.1236572265625,
+          23.966508865356445
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "174": [
+      {
+        "timestamp": 6.96,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          415.43072509765625,
+          24.66720199584961
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "175": [
+      {
+        "timestamp": 7.0,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          414.8606872558594,
+          24.42622947692871
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "176": [
+      {
+        "timestamp": 7.04,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          414.6309814453125,
+          24.300640106201172
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "177": [
+      {
+        "timestamp": 7.08,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          414.27532958984375,
+          24.874492645263672
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "178": [
+      {
+        "timestamp": 7.12,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          413.51568603515625,
+          25.418781280517578
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "179": [
+      {
+        "timestamp": 7.16,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          412.9712829589844,
+          26.17591667175293
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "180": [
+      {
+        "timestamp": 7.2,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          412.6346435546875,
+          26.891286849975586
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "181": [
+      {
+        "timestamp": 7.24,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          412.5982666015625,
+          27.579524993896484
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "182": [
+      {
+        "timestamp": 7.28,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          412.77252197265625,
+          27.999391555786133
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "183": [
+      {
+        "timestamp": 7.32,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          413.0565185546875,
+          28.184465408325195
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "184": [
+      {
+        "timestamp": 7.36,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          413.4893493652344,
+          29.018991470336914
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "185": [
+      {
+        "timestamp": 7.4,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          413.73626708984375,
+          29.31374168395996
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "186": [
+      {
+        "timestamp": 7.44,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          414.20208740234375,
+          29.97404670715332
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "187": [
+      {
+        "timestamp": 7.48,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          414.322998046875,
+          30.25283432006836
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "188": [
+      {
+        "timestamp": 7.52,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          414.43621826171875,
+          30.587852478027344
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "189": [
+      {
+        "timestamp": 7.56,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          414.2759704589844,
+          30.512393951416016
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "190": [
+      {
+        "timestamp": 7.6,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          414.3209228515625,
+          30.45655632019043
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "191": [
+      {
+        "timestamp": 7.64,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          414.03619384765625,
+          29.134323120117188
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "192": [
+      {
+        "timestamp": 7.68,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          413.75439453125,
+          29.618803024291992
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "193": [
+      {
+        "timestamp": 7.72,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          414.06268310546875,
+          29.626161575317383
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "194": [
+      {
+        "timestamp": 7.76,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          415.040283203125,
+          33.621177673339844
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "195": [
+      {
+        "timestamp": 7.8,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          415.10107421875,
+          36.25497055053711
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "196": [
+      {
+        "timestamp": 7.84,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          414.296630859375,
+          37.1242790222168
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "197": [
+      {
+        "timestamp": 7.88,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          414.3026123046875,
+          37.38861083984375
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "198": [
+      {
+        "timestamp": 7.92,
+        "track_id": 1,
+        "class_name": "exit_zone_marker",
+        "centroid": [
+          412.8798828125,
+          37.46468734741211
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ]
+  },
+  "zone_transitions": [
+    {
+      "frame": 90,
+      "timestamp": 3.6,
+      "track_id": 3,
+      "class_name": "box",
+      "zone_name": "exit_zone",
+      "event_type": "entered"
+    }
+  ]
+}

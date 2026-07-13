@@ -88,6 +88,29 @@ class ZoneDrawer:
             self.redraw()
 
 
+def read_frame_sequentially(cap: cv2.VideoCapture, target_frame: int):
+    """
+    Reads frames one at a time up to target_frame, instead of using
+    cap.set(cv2.CAP_PROP_POS_FRAMES, ...) to seek directly.
+
+    Rationale: CAP_PROP_POS_FRAMES seeking is unreliable on many H.264
+    encodes (especially compressed stock-footage downloads with sparse
+    keyframes) — OpenCV can silently fail the seek and just return an
+    early frame regardless of the requested index. Sequential reading
+    is slower for large target_frame values but always correct
+    regardless of codec/keyframe layout.
+    """
+    frame = None
+    for i in range(target_frame + 1):
+        ret, frame = cap.read()
+        if not ret:
+            raise RuntimeError(
+                f"Video ended at frame {i} while seeking to frame {target_frame} "
+                f"(video may be shorter than expected, or corrupted)."
+            )
+    return frame
+
+
 def main():
     parser = argparse.ArgumentParser(description="Draw ChainSight zone polygons on a reference frame")
     parser.add_argument("--video", required=True, help="Path to a video to grab a reference frame from")
@@ -99,10 +122,12 @@ def main():
     if not cap.isOpened():
         raise FileNotFoundError(f"Cannot open video: {args.video}")
 
-    cap.set(cv2.CAP_PROP_POS_FRAMES, args.frame)
-    ret, frame = cap.read()
-    if not ret:
-        raise RuntimeError(f"Could not read frame {args.frame} from video")
+    total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    fps = cap.get(cv2.CAP_PROP_FPS)
+    print(f"Video: {total_frames} total frames, {fps:.2f} fps "
+          f"(~{total_frames / fps:.1f}s) — reading sequentially to frame {args.frame}...")
+
+    frame = read_frame_sequentially(cap, args.frame)
     h, w = frame.shape[:2]
     cap.release()
 

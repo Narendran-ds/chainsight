@@ -2,16 +2,29 @@
 graph_builder.py — ChainSight World Graph Layer
 Consumes tracker.py's tracks.json and spatial.py's spatial_events.json,
 builds a NetworkX graph representation of the scene for the rule engine
-to query.
+to query (via query.py's WorldQuery).
 
 Pipeline position:
-    tracker.py (tracks.json) + spatial/*.py (spatial_events.json) -> world_graph (THIS) -> rules
+    tracker.py (tracks.json) + spatial/*.py (spatial_events.json)
+        -> track_quality.py (valid track_ids)
+        -> world_graph/graph_builder.py (THIS)
+        -> world_graph/query.py -> rules
 
 Design principle (per ChainSight scope): deterministic, no training.
-Ghost/churned tracks (tracker ID fragmentation on occluded static
-objects — see tracker.py ID-churn caveat) are filtered out before the
-graph is built, using a minimum track-lifespan threshold, so rules
-don't fire on tracking noise.
+Track-quality filtering (ghost/churned tracks from tracker ID
+fragmentation) is delegated to utils/track_quality.py rather than done
+inline here, so "what counts as a valid track" has one definition
+shared by any future consumer of tracks.json, not just this layer.
+
+Known scope decisions (documented, not bugs):
+  - Undirected nx.Graph, single edge per node pair: sufficient for the
+    zone-containment / proximity rules this project's rule engine
+    currently needs. Directed/multi-edge relationships (e.g. "follows",
+    "blocking") are deferred until a concrete rule requires them —
+    see docs/scope_and_limitations.md.
+  - Frame graphs are rebuilt independently per frame rather than
+    incrementally updated. Fine at this project's scale (single clip,
+    offline batch); would matter for real-time/streaming use.
 """
 
 import json
@@ -22,12 +35,21 @@ from typing import Dict, Optional, Iterator, Set, Tuple
 
 import networkx as nx
 
+from ..utils.track_quality import TrackQualityConfig, filter_valid_tracks
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)-7s | %(message)s",
     datefmt="%H:%M:%S",
 )
 logger = logging.getLogger("chainsight.world_graph.builder")
+
+# --- schema validation (#12) ---
+# Minimum fields graph_builder relies on existing in each tracks.json entry.
+# If tracker.py's export schema changes, this fails loudly here instead of
+# silently producing an empty/wrong graph downstream.
+REQUIRED_TRACK_KEYS = {"class_name", "age_frames"}
+REQUIRED_SPATIAL_EVENT_KEYS = {"track_id", "class_name", "centroid", "timestamp"}
 
 
 @dataclass
@@ -43,27 +65,26 @@ class GraphBuilder:
     Two outputs:
       - frame graphs (iter_frame_graphs / build_frame_graph): one nx.Graph
         per analyzed frame, nodes = tracks + zones, edges = "inside_zone"
-        (track->zone) and "near" (track<->track). This is the primary
-        interface for the rule engine, which needs point-in-time state
-        (e.g. "person in restricted zone AND forklift in same zone AND
-        distance < threshold").
+        (track->zone) and "near" (track<->track). Primary interface for
+        the rule engine (via query.py) for point-in-time conditions.
       - summary graph (build_summary_graph): one aggregate nx.Graph across
         the whole clip, with lifecycle/visit-duration attributes instead
-        of per-frame state. Useful for narration context and debugging,
-        not for rule evaluation.
+        of per-frame state. Useful for narration context and debugging.
     """
 
     def __init__(self, tracks_path: str, spatial_events_path: str, config: Optional[WorldGraphConfig] = None):
         self.config = config or WorldGraphConfig()
         self.tracks = self._load_tracks(tracks_path)
         self.spatial = self._load_spatial(spatial_events_path)
-        self.valid_track_ids = self._filter_valid_tracks()
+        self.valid_track_ids = filter_valid_tracks(
+            self.tracks, TrackQualityConfig(min_track_frames=self.config.min_track_frames)
+        )
         logger.info(
             f"Loaded {len(self.tracks)} tracks, kept {len(self.valid_track_ids)} "
-            f"after ghost-filter (min_track_frames={self.config.min_track_frames})"
+            f"after track-quality filter (min_track_frames={self.config.min_track_frames})"
         )
 
-    # --- loading (mirrors error-handling style of spatial/analyzer.py) ---
+    # --- loading + schema validation (#12) ---
     def _load_tracks(self, path: str) -> dict:
         p = Path(path)
         if not p.exists():
@@ -75,6 +96,16 @@ class GraphBuilder:
             raise ValueError(f"tracks.json is not valid JSON: {e}") from e
         if not isinstance(data, dict) or not data:
             logger.warning("tracks.json is empty or malformed — no tracks to graph.")
+            return data
+
+        sample_id, sample_track = next(iter(data.items()))
+        missing = REQUIRED_TRACK_KEYS - set(sample_track.keys())
+        if missing:
+            raise ValueError(
+                f"tracks.json schema mismatch: track '{sample_id}' is missing required "
+                f"field(s) {missing}. tracker.py's export schema may have changed — "
+                f"update REQUIRED_TRACK_KEYS in graph_builder.py if this is intentional."
+            )
         return data
 
     def _load_spatial(self, path: str) -> dict:
@@ -88,18 +119,21 @@ class GraphBuilder:
             raise ValueError(f"spatial_events.json is not valid JSON: {e}") from e
         if "frames" not in data or "zone_transitions" not in data:
             raise ValueError("spatial_events.json missing 'frames' or 'zone_transitions' keys.")
+
+        for frame_events in data["frames"].values():
+            if frame_events:
+                missing = REQUIRED_SPATIAL_EVENT_KEYS - set(frame_events[0].keys())
+                if missing:
+                    raise ValueError(
+                        f"spatial_events.json schema mismatch: event is missing required "
+                        f"field(s) {missing}. spatial/analyzer.py's export schema may have "
+                        f"changed — update REQUIRED_SPATIAL_EVENT_KEYS in graph_builder.py "
+                        f"if this is intentional."
+                    )
+                break
         return data
 
-    # --- ghost/churn filter ---
-    def _filter_valid_tracks(self) -> Set[int]:
-        valid = set()
-        for track_id_str, track in self.tracks.items():
-            age = track.get("age_frames", 0)
-            if age >= self.config.min_track_frames:
-                valid.add(int(track_id_str))
-        return valid
-
-    # --- per-frame graphs (primary rule-engine interface) ---
+    # --- per-frame graphs (primary rule-engine interface, via query.py) ---
     def iter_frame_graphs(self) -> Iterator[nx.Graph]:
         """Yields one nx.Graph per frame present in spatial_events.json, in frame order."""
         frames = self.spatial["frames"]
@@ -146,8 +180,9 @@ class GraphBuilder:
         """
         One graph for the whole clip: track nodes carry lifecycle attrs
         (class, duration, avg_speed, status), zone nodes are visited by
-        edges carrying frame_count / first_frame / last_frame instead of
-        per-frame state. Not used by the rule engine directly.
+        edges carrying frame_count / first_frame / last_frame / entry
+        counts instead of per-frame state. Not used by the rule engine
+        directly — see query.py for that.
         """
         G = nx.Graph()
 
@@ -194,25 +229,54 @@ class GraphBuilder:
                     key = (track_id, near_id) if track_id < near_id else (near_id, track_id)
                     stats = near_edge_stats.setdefault(
                         key, {"frame_count": 0, "min_distance": near["distance_px"],
-                              "first_frame": frame_idx, "last_frame": frame_idx}
+                              "sum_distance": 0.0, "first_frame": frame_idx, "last_frame": frame_idx}
                     )
                     stats["frame_count"] += 1
                     stats["min_distance"] = min(stats["min_distance"], near["distance_px"])
+                    stats["sum_distance"] += near["distance_px"]
                     stats["last_frame"] = max(stats["last_frame"], frame_idx)
                     stats["first_frame"] = min(stats["first_frame"], frame_idx)
 
+        # zone_transitions -> per-track-per-zone entry counts (scoped #10)
+        entry_counts: Dict[Tuple[int, str], int] = {}
+        for t in self.spatial["zone_transitions"]:
+            if t["event_type"] == "entered" and t["track_id"] in self.valid_track_ids:
+                key = (t["track_id"], t["zone_name"])
+                entry_counts[key] = entry_counts.get(key, 0) + 1
+
         for (track_id, zone_name), stats in zone_edge_stats.items():
-            G.add_edge(track_id, zone_name, relation="visited_zone", **stats)
+            G.add_edge(
+                track_id, zone_name, relation="visited_zone",
+                transition_count=entry_counts.get((track_id, zone_name), 0),
+                **stats,
+            )
 
         for (id_a, id_b), stats in near_edge_stats.items():
-            G.add_edge(id_a, id_b, relation="near", **stats)
+            frame_count = stats.pop("frame_count")
+            sum_distance = stats.pop("sum_distance")
+            G.add_edge(
+                id_a, id_b, relation="near",
+                frame_count=frame_count,
+                average_distance=round(sum_distance / frame_count, 2) if frame_count else None,
+                total_time_near_frames=frame_count,
+                **stats,
+            )
 
         return G
 
     # --- export helpers ---
     def frame_graph_to_json(self, G: nx.Graph) -> dict:
-        """node-link JSON representation of a single frame graph."""
-        return nx.node_link_data(G, edges="edges")
+        """
+        node-link JSON representation of a single frame graph.
+        NetworkX renamed the "links" key to "edges" (via the edges= kwarg)
+        in 3.4+; older versions don't accept that kwarg at all. Try the
+        modern call first, fall back for older installs so this works
+        regardless of the installed networkx version.
+        """
+        try:
+            return nx.node_link_data(G, edges="edges")
+        except TypeError:
+            return nx.node_link_data(G)
 
     def summary(self) -> str:
         G = self.build_summary_graph()
@@ -220,6 +284,6 @@ class GraphBuilder:
         zone_nodes = [n for n, d in G.nodes(data=True) if d.get("node_type") == "zone"]
         return (
             f"World graph: {len(track_nodes)} track nodes, {len(zone_nodes)} zone nodes, "
-            f"{G.number_of_edges()} edges (ghost-filtered, min_track_frames="
+            f"{G.number_of_edges()} edges (track-quality-filtered, min_track_frames="
             f"{self.config.min_track_frames})"
         )
