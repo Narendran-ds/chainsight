@@ -28,6 +28,9 @@ def main():
                          help="Ghost/churn filter for world graph track nodes (does not affect PPE/exit-blockage detection)")
     parser.add_argument("--near-miss-distance-px", type=float, default=100.0)
     parser.add_argument("--near-miss-min-frames", type=int, default=10)
+    parser.add_argument("--near-miss-gap-tolerance-frames", type=int, default=3,
+                         help="Brief gaps up to this many frames don't reset a near-miss streak "
+                              "(tolerates single-frame tracker/detector flicker)")
     parser.add_argument("--ppe-overlap-threshold", type=float, default=0.5)
     parser.add_argument("--loiter-min-seconds", type=float, default=10.0)
     parser.add_argument("--min-exit-block-seconds", type=float, default=3.0)
@@ -45,6 +48,7 @@ def main():
     rule_config = RuleEngineConfig(
         near_miss_distance_px=args.near_miss_distance_px,
         near_miss_min_consecutive_frames=args.near_miss_min_frames,
+        near_miss_gap_tolerance_frames=args.near_miss_gap_tolerance_frames,
         ppe_overlap_threshold=args.ppe_overlap_threshold,
         loiter_min_seconds=args.loiter_min_seconds,
         min_exit_block_seconds=args.min_exit_block_seconds,

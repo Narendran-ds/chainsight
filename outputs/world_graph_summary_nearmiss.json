@@ -1,0 +1,117 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "node_type": "track",
+      "class_name": "forklift",
+      "first_seen_frame": 0,
+      "last_seen_frame": 524,
+      "age_frames": 525,
+      "duration_seconds": 20.96,
+      "average_speed": 136.5707,
+      "status": "alive",
+      "id": 1
+    },
+    {
+      "node_type": "track",
+      "class_name": "person",
+      "first_seen_frame": 0,
+      "last_seen_frame": 77,
+      "age_frames": 78,
+      "duration_seconds": 3.08,
+      "average_speed": 340.1528,
+      "status": "dead",
+      "id": 2
+    },
+    {
+      "node_type": "track",
+      "class_name": "person",
+      "first_seen_frame": 0,
+      "last_seen_frame": 524,
+      "age_frames": 525,
+      "duration_seconds": 20.96,
+      "average_speed": 86.742,
+      "status": "alive",
+      "id": 3
+    },
+    {
+      "node_type": "track",
+      "class_name": "person",
+      "first_seen_frame": 130,
+      "last_seen_frame": 220,
+      "age_frames": 91,
+      "duration_seconds": 3.6,
+      "average_speed": 60.6667,
+      "status": "dead",
+      "id": 8
+    },
+    {
+      "node_type": "zone",
+      "id": "restricted_forklift_pedestrian_aisle"
+    }
+  ],
+  "links": [
+    {
+      "relation": "visited_zone",
+      "transition_count": 1,
+      "frame_count": 488,
+      "first_frame": 0,
+      "last_frame": 524,
+      "source": 1,
+      "target": "restricted_forklift_pedestrian_aisle"
+    },
+    {
+      "relation": "near",
+      "frame_count": 776,
+      "average_distance": 1386.12,
+      "total_time_near_frames": 776,
+      "min_distance": 1269.84,
+      "first_frame": 0,
+      "last_frame": 497,
+      "source": 1,
+      "target": 3
+    },
+    {
+      "relation": "visited_zone",
+      "transition_count": 1,
+      "frame_count": 13,
+      "first_frame": 0,
+      "last_frame": 12,
+      "source": 2,
+      "target": "restricted_forklift_pedestrian_aisle"
+    },
+    {
+      "relation": "near",
+      "frame_count": 152,
+      "average_distance": 720.24,
+      "total_time_near_frames": 152,
+      "min_distance": 240.81,
+      "first_frame": 0,
+      "last_frame": 77,
+      "source": 2,
+      "target": 3
+    },
+    {
+      "relation": "visited_zone",
+      "transition_count": 1,
+      "frame_count": 525,
+      "first_frame": 0,
+      "last_frame": 524,
+      "source": 3,
+      "target": "restricted_forklift_pedestrian_aisle"
+    },
+    {
+      "relation": "near",
+      "frame_count": 94,
+      "average_distance": 1352.23,
+      "total_time_near_frames": 94,
+      "min_distance": 1279.81,
+      "first_frame": 130,
+      "last_frame": 220,
+      "source": 3,
+      "target": 8
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "zones": [
+    {
+      "name": "restricted_forklift_pedestrian_aisle",
+      "type": "restricted",
+      "polygon": [
+        [700, 650],
+        [3020, 620],
+        [3100, 1750],
+        [620, 1780]
+      ]
+    }
+  ],
+  "frame_width": 3840,
+  "frame_height": 2160
+}

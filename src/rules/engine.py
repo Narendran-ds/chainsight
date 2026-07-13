@@ -92,6 +92,13 @@ class RuleEngine:
                 t["event_type"] == "entered"
                 and t["class_name"] == "person"
                 and self._is_restricted(t["zone_name"])
+                # Ghost/churn tracks (tracker-ID fragments alive fewer than
+                # min_track_frames) still show up in the raw spatial events
+                # this loop reads from, so filter through the same
+                # single-source-of-truth "valid track" definition the world
+                # graph already uses (see utils/track_quality.py) rather
+                # than flagging a false intrusion for a flicker detection.
+                and t["track_id"] in self.builder.valid_track_ids
             ):
                 events.append(RuleEvent(
                     rule_id="R1_RESTRICTED_ZONE_INTRUSION",
@@ -114,6 +121,12 @@ class RuleEngine:
         events = []
         consecutive_count: Dict[Tuple[int, int], int] = {}
         fired: Dict[Tuple[int, int], bool] = {}
+        # Tracks how many frames in a row a pair has been absent from
+        # active_pairs. Only reset consecutive_count/fired once this
+        # exceeds near_miss_gap_tolerance_frames — see that field's
+        # docstring in rule_definitions.py for why a hard reset-on-any-gap
+        # fragments one sustained near-miss into several fired events.
+        gap_streak: Dict[Tuple[int, int], int] = {}
 
         frames = self.builder.spatial["frames"]
         for frame_idx_str in sorted(frames.keys(), key=int):
@@ -136,9 +149,12 @@ class RuleEngine:
 
             for pair in list(consecutive_count.keys()):
                 if pair not in active_pairs:
-                    consecutive_count[pair] = 0
-                    fired[pair] = False
+                    gap_streak[pair] = gap_streak.get(pair, 0) + 1
+                    if gap_streak[pair] > self.config.near_miss_gap_tolerance_frames:
+                        consecutive_count[pair] = 0
+                        fired[pair] = False
             for pair in active_pairs:
+                gap_streak[pair] = 0
                 consecutive_count[pair] = consecutive_count.get(pair, 0) + 1
 
                 if (
@@ -163,13 +179,17 @@ class RuleEngine:
                         evidence={
                             "distance_threshold_px": self.config.near_miss_distance_px,
                             "consecutive_frames": consecutive_count[pair],
+                            "gap_tolerance_frames": self.config.near_miss_gap_tolerance_frames,
                         },
                         conclusion=(
                             f"Person {person_id} and forklift {forklift_id} remained within "
                             f"{self.config.near_miss_distance_px}px of each other inside a "
                             f"restricted zone for at least "
-                            f"{self.config.near_miss_min_consecutive_frames} consecutive frames. "
-                            f"Reason: sustained near-miss proximity, not a brief pass-through."
+                            f"{self.config.near_miss_min_consecutive_frames} consecutive frames "
+                            f"(brief gaps of up to {self.config.near_miss_gap_tolerance_frames} "
+                            f"frame(s) tolerated as tracker/detector flicker rather than a real "
+                            f"separation). Reason: sustained near-miss proximity, not a brief "
+                            f"pass-through."
                         ),
                     ))
         return events

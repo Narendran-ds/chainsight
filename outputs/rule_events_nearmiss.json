@@ -1,0 +1,106 @@
+[
+  {
+    "rule_id": "R1_RESTRICTED_ZONE_INTRUSION",
+    "rule_name": "Restricted Zone Intrusion",
+    "frame": 0,
+    "timestamp": 0.0,
+    "severity": "warning",
+    "track_ids": [
+      2
+    ],
+    "trigger": "Person 2 entered restricted zone 'restricted_forklift_pedestrian_aisle'.",
+    "evidence": {
+      "zone_name": "restricted_forklift_pedestrian_aisle",
+      "zone_type": "restricted"
+    },
+    "conclusion": "Person 2 entered restricted zone 'restricted_forklift_pedestrian_aisle' at frame 0. Reason: person detected inside a restricted zone."
+  },
+  {
+    "rule_id": "R1_RESTRICTED_ZONE_INTRUSION",
+    "rule_name": "Restricted Zone Intrusion",
+    "frame": 0,
+    "timestamp": 0.0,
+    "severity": "warning",
+    "track_ids": [
+      3
+    ],
+    "trigger": "Person 3 entered restricted zone 'restricted_forklift_pedestrian_aisle'.",
+    "evidence": {
+      "zone_name": "restricted_forklift_pedestrian_aisle",
+      "zone_type": "restricted"
+    },
+    "conclusion": "Person 3 entered restricted zone 'restricted_forklift_pedestrian_aisle' at frame 0. Reason: person detected inside a restricted zone."
+  },
+  {
+    "rule_id": "R2_FORKLIFT_PEDESTRIAN_NEAR_MISS",
+    "rule_name": "Forklift-Pedestrian Near-Miss",
+    "frame": 41,
+    "timestamp": 1.64,
+    "severity": "critical",
+    "track_ids": [
+      3,
+      1
+    ],
+    "trigger": "Person 3 sustained proximity to forklift 1 in a restricted zone for 10+ consecutive frames.",
+    "evidence": {
+      "distance_threshold_px": 1400.0,
+      "consecutive_frames": 10,
+      "gap_tolerance_frames": 3
+    },
+    "conclusion": "Person 3 and forklift 1 remained within 1400.0px of each other inside a restricted zone for at least 10 consecutive frames (brief gaps of up to 3 frame(s) tolerated as tracker/detector flicker rather than a real separation). Reason: sustained near-miss proximity, not a brief pass-through."
+  },
+  {
+    "rule_id": "R2_FORKLIFT_PEDESTRIAN_NEAR_MISS",
+    "rule_name": "Forklift-Pedestrian Near-Miss",
+    "frame": 300,
+    "timestamp": 12.0,
+    "severity": "critical",
+    "track_ids": [
+      3,
+      1
+    ],
+    "trigger": "Person 3 sustained proximity to forklift 1 in a restricted zone for 10+ consecutive frames.",
+    "evidence": {
+      "distance_threshold_px": 1400.0,
+      "consecutive_frames": 10,
+      "gap_tolerance_frames": 3
+    },
+    "conclusion": "Person 3 and forklift 1 remained within 1400.0px of each other inside a restricted zone for at least 10 consecutive frames (brief gaps of up to 3 frame(s) tolerated as tracker/detector flicker rather than a real separation). Reason: sustained near-miss proximity, not a brief pass-through."
+  },
+  {
+    "rule_id": "R2_FORKLIFT_PEDESTRIAN_NEAR_MISS",
+    "rule_name": "Forklift-Pedestrian Near-Miss",
+    "frame": 334,
+    "timestamp": 13.36,
+    "severity": "critical",
+    "track_ids": [
+      3,
+      1
+    ],
+    "trigger": "Person 3 sustained proximity to forklift 1 in a restricted zone for 10+ consecutive frames.",
+    "evidence": {
+      "distance_threshold_px": 1400.0,
+      "consecutive_frames": 10,
+      "gap_tolerance_frames": 3
+    },
+    "conclusion": "Person 3 and forklift 1 remained within 1400.0px of each other inside a restricted zone for at least 10 consecutive frames (brief gaps of up to 3 frame(s) tolerated as tracker/detector flicker rather than a real separation). Reason: sustained near-miss proximity, not a brief pass-through."
+  },
+  {
+    "rule_id": "R2_FORKLIFT_PEDESTRIAN_NEAR_MISS",
+    "rule_name": "Forklift-Pedestrian Near-Miss",
+    "frame": 411,
+    "timestamp": 16.44,
+    "severity": "critical",
+    "track_ids": [
+      3,
+      1
+    ],
+    "trigger": "Person 3 sustained proximity to forklift 1 in a restricted zone for 10+ consecutive frames.",
+    "evidence": {
+      "distance_threshold_px": 1400.0,
+      "consecutive_frames": 10,
+      "gap_tolerance_frames": 3
+    },
+    "conclusion": "Person 3 and forklift 1 remained within 1400.0px of each other inside a restricted zone for at least 10 consecutive frames (brief gaps of up to 3 frame(s) tolerated as tracker/detector flicker rather than a real separation). Reason: sustained near-miss proximity, not a brief pass-through."
+  }
+]

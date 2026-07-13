@@ -26,6 +26,13 @@ class RuleEngineConfig:
     # would silently never fire.
     near_miss_distance_px: float = 100.0
     near_miss_min_consecutive_frames: int = 10
+    # Single-frame detector/tracker flicker (a distance briefly ticking a
+    # few px over threshold, or a bbox-overlap ratio dipping below the zone
+    # threshold for one frame) can split one real sustained near-miss into
+    # several fired events. Gaps up to this many frames don't reset the
+    # consecutive-frame counter; only a gap longer than this counts as the
+    # pair genuinely separating.
+    near_miss_gap_tolerance_frames: int = 3
 
     # --- Scenario 3: PPE Violation ---
     # class_name -> what it means when detected (the "missing PPE" classes)
