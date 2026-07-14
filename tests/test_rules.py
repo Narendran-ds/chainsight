@@ -175,3 +175,4 @@ def test_r2_does_not_bridge_gap_longer_than_tolerance(tmp_path):
 
     r2_events = [e for e in events if e.rule_id == "R2_FORKLIFT_PEDESTRIAN_NEAR_MISS"]
     assert len(r2_events) == 2, "a genuine 10-frame separation (beyond gap tolerance) should be two episodes"
+

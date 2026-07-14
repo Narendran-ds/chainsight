@@ -18,7 +18,7 @@ numpy==1.26.4
 networkx==3.3                 # Graph construction + traversal
 
 # ---- Rule Engine Layer ---------------------------------------------------------
-pydantic==2.8.2                # Structured, validated event/rule objects
+pydantic==2.9.2              # Structured, validated event/rule objects
 
 # ---- Narration Layer (Constrained LLM) ----------------------------------------
 #google-generativeai==0.7.2     # deprecated by Google in favor of google-genai (no more updates/fixes) — replaced below
