@@ -7,7 +7,7 @@
 ultralytics==8.2.103          # YOLOv8 training + inference
 torch==2.3.1                  # PyTorch backend (install CUDA build separately if needed)
 torchvision==0.18.1
-opencv-python==4.10.0.84
+opencv-python-headless==4.10.0.84
 #bytetracker==0.3.2            # ByteTrack multi-object tracking
 
 # ---- Spatial Layer -----------------------------------------------------------
