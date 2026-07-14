@@ -1,0 +1,22 @@
+{
+  "events": [
+    {
+      "rule_id": "R1_RESTRICTED_ZONE_INTRUSION",
+      "rule_name": "Restricted Zone Intrusion",
+      "frame": 490,
+      "timestamp": 20.4337,
+      "severity": "warning",
+      "track_ids": [
+        294
+      ],
+      "trigger": "Person 294 entered restricted zone 'restricted_aisle_floor'.",
+      "evidence": {
+        "zone_name": "restricted_aisle_floor",
+        "zone_type": "restricted"
+      },
+      "conclusion": "Person 294 entered restricted zone 'restricted_aisle_floor' at frame 490. Reason: person detected inside a restricted zone.",
+      "narration": "At frame 490 (20.43 seconds), Person 294 was detected entering the restricted zone 'restricted_aisle_floor'."
+    }
+  ],
+  "summary": "Based on the analysis of the clip, a single safety rule event was recorded. At frame 490, one instance of a Restricted Zone Intrusion occurred when Person 294 was detected entering the restricted zone designated as 'restricted_aisle_floor'."
+}

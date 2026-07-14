@@ -1,0 +1,28 @@
+{
+  "zones": [
+    {
+      "name": "exit_zone_dock_door",
+      "type": "exit",
+      "polygon": [
+        [
+          230,
+          15
+        ],
+        [
+          560,
+          15
+        ],
+        [
+          560,
+          345
+        ],
+        [
+          230,
+          345
+        ]
+      ]
+    }
+  ],
+  "frame_width": 768,
+  "frame_height": 432
+}

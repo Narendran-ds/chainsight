@@ -1,0 +1,21 @@
+[
+  {
+    "rule_id": "R4_EXIT_BLOCKAGE",
+    "rule_name": "Exit Blockage",
+    "frame": 125,
+    "timestamp": 5.2135,
+    "severity": "critical",
+    "track_ids": [
+      1
+    ],
+    "trigger": "Small_load_carrier 1 occupied exit zone 'exit_zone_dock_door' continuously for 5.2s.",
+    "evidence": {
+      "zone_name": "exit_zone_dock_door",
+      "duration_seconds": 5.21,
+      "first_frame": 0,
+      "last_frame": 125,
+      "class_name": "small_load_carrier"
+    },
+    "conclusion": "A small_load_carrier (track 1) remained inside exit zone 'exit_zone_dock_door' for 5.2 seconds (threshold: 3.0s), continuously through frame 125. Reason: sustained object presence in a designated exit path constitutes a blockage hazard."
+  }
+]

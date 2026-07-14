@@ -1,0 +1,18 @@
+[
+  {
+    "rule_id": "R1_RESTRICTED_ZONE_INTRUSION",
+    "rule_name": "Restricted Zone Intrusion",
+    "frame": 490,
+    "timestamp": 20.4337,
+    "severity": "warning",
+    "track_ids": [
+      294
+    ],
+    "trigger": "Person 294 entered restricted zone 'restricted_aisle_floor'.",
+    "evidence": {
+      "zone_name": "restricted_aisle_floor",
+      "zone_type": "restricted"
+    },
+    "conclusion": "Person 294 entered restricted zone 'restricted_aisle_floor' at frame 490. Reason: person detected inside a restricted zone."
+  }
+]

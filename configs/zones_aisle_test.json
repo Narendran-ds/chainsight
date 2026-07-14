@@ -1,0 +1,28 @@
+{
+  "zones": [
+    {
+      "name": "restricted_aisle_floor",
+      "type": "restricted",
+      "polygon": [
+        [
+          0,
+          180
+        ],
+        [
+          768,
+          180
+        ],
+        [
+          768,
+          432
+        ],
+        [
+          0,
+          432
+        ]
+      ]
+    }
+  ],
+  "frame_width": 768,
+  "frame_height": 432
+}

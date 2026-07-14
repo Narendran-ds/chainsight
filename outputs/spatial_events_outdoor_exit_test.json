@@ -1,0 +1,2817 @@
+{
+  "frames": {
+    "0": [
+      {
+        "timestamp": 0.0,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          357.2159423828125,
+          315.9742126464844
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.0,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.9439697265625,
+          77.29035186767578
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "1": [
+      {
+        "timestamp": 0.0417,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          356.9863586425781,
+          315.8277893066406
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.0417,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.9760131835938,
+          77.8291244506836
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "2": [
+      {
+        "timestamp": 0.0834,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          356.99603271484375,
+          315.6468505859375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.0834,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.003662109375,
+          78.29324340820312
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "3": [
+      {
+        "timestamp": 0.1251,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          356.91741943359375,
+          315.5047912597656
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "4": [
+      {
+        "timestamp": 0.1668,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          356.93145751953125,
+          315.20147705078125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "5": [
+      {
+        "timestamp": 0.2085,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          356.8813171386719,
+          315.0482482910156
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "6": [
+      {
+        "timestamp": 0.2502,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          356.93524169921875,
+          314.8984069824219
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.2502,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.1007080078125,
+          81.41603088378906
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "7": [
+      {
+        "timestamp": 0.292,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          357.0138244628906,
+          314.778564453125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.292,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.3385620117188,
+          82.11487579345703
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "8": [
+      {
+        "timestamp": 0.3337,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          357.0920715332031,
+          314.73223876953125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.3337,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.325439453125,
+          82.52243041992188
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "9": [
+      {
+        "timestamp": 0.3754,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          357.21533203125,
+          314.6461181640625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.3754,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.4989013671875,
+          82.79317474365234
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "10": [
+      {
+        "timestamp": 0.4171,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          357.391845703125,
+          314.5014343261719
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "11": [
+      {
+        "timestamp": 0.4588,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          357.517822265625,
+          314.4690246582031
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "12": [
+      {
+        "timestamp": 0.5005,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          357.79132080078125,
+          314.5174560546875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.5005,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.802978515625,
+          83.76640319824219
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "13": [
+      {
+        "timestamp": 0.5422,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          357.95501708984375,
+          314.6750793457031
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.5422,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          695.2261962890625,
+          83.78483581542969
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "14": [
+      {
+        "timestamp": 0.5839,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          358.151123046875,
+          314.69573974609375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.5839,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          695.4017333984375,
+          83.80016326904297
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "15": [
+      {
+        "timestamp": 0.6256,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          358.32244873046875,
+          314.82012939453125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.6256,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          695.4656372070312,
+          83.72659301757812
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "16": [
+      {
+        "timestamp": 0.6673,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          358.5882568359375,
+          314.86163330078125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.6673,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          695.517578125,
+          83.80805206298828
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "17": [
+      {
+        "timestamp": 0.709,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          358.928955078125,
+          314.9166259765625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.709,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          695.81884765625,
+          83.76793670654297
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "18": [
+      {
+        "timestamp": 0.7507,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          359.21307373046875,
+          314.93841552734375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.7507,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          695.8905029296875,
+          83.6434326171875
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "19": [
+      {
+        "timestamp": 0.7925,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          359.5052490234375,
+          314.96368408203125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.7925,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          696.0265502929688,
+          83.11045837402344
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "20": [
+      {
+        "timestamp": 0.8342,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          359.720947265625,
+          315.0911865234375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.8342,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          695.820556640625,
+          82.9471664428711
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "21": [
+      {
+        "timestamp": 0.8759,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          359.9040222167969,
+          315.2684326171875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.8759,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          695.6072387695312,
+          82.69546508789062
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "22": [
+      {
+        "timestamp": 0.9176,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          360.22845458984375,
+          315.32666015625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.9176,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          695.7730712890625,
+          82.32235717773438
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "23": [
+      {
+        "timestamp": 0.9593,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          360.6190490722656,
+          315.5259094238281
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 0.9593,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          695.7638549804688,
+          81.87567901611328
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "24": [
+      {
+        "timestamp": 1.001,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          360.94091796875,
+          315.7034912109375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 1.001,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          695.4708251953125,
+          81.35664367675781
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "25": [
+      {
+        "timestamp": 1.0427,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.2513732910156,
+          315.890625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 1.0427,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.855712890625,
+          79.9010238647461
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "26": [
+      {
+        "timestamp": 1.0844,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.5614318847656,
+          316.0595703125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 1.0844,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.4742431640625,
+          79.28245544433594
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "27": [
+      {
+        "timestamp": 1.1261,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.733642578125,
+          316.1788330078125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 1.1261,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.4696044921875,
+          78.66223907470703
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "28": [
+      {
+        "timestamp": 1.1678,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.862060546875,
+          316.259033203125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 1.1678,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.1884765625,
+          78.35871887207031
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "29": [
+      {
+        "timestamp": 1.2095,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.94085693359375,
+          316.3157043457031
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "30": [
+      {
+        "timestamp": 1.2512,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.9596862792969,
+          316.3847351074219
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "31": [
+      {
+        "timestamp": 1.293,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.8885192871094,
+          316.4248352050781
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "32": [
+      {
+        "timestamp": 1.3347,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.8357849121094,
+          316.4676208496094
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "33": [
+      {
+        "timestamp": 1.3764,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.6802978515625,
+          316.45867919921875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "34": [
+      {
+        "timestamp": 1.4181,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.59844970703125,
+          316.3813781738281
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "35": [
+      {
+        "timestamp": 1.4598,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.4239501953125,
+          316.352783203125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "36": [
+      {
+        "timestamp": 1.5015,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.14111328125,
+          316.245849609375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "37": [
+      {
+        "timestamp": 1.5432,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          360.8458251953125,
+          316.187255859375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "38": [
+      {
+        "timestamp": 1.5849,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          360.57220458984375,
+          316.0653991699219
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "39": [
+      {
+        "timestamp": 1.6266,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          360.344970703125,
+          316.05718994140625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "40": [
+      {
+        "timestamp": 1.6683,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          360.224853515625,
+          315.976318359375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "41": [
+      {
+        "timestamp": 1.71,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          359.96954345703125,
+          315.714111328125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "42": [
+      {
+        "timestamp": 1.7517,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          359.7252197265625,
+          315.39117431640625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 1.7517,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.8463745117188,
+          75.69091796875
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "43": [
+      {
+        "timestamp": 1.7935,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          359.47100830078125,
+          315.2541809082031
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 1.7935,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.7188720703125,
+          74.96038818359375
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "44": [
+      {
+        "timestamp": 1.8352,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          359.20135498046875,
+          315.17431640625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 1.8352,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.6207885742188,
+          74.67515563964844
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "45": [
+      {
+        "timestamp": 1.8769,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          358.87347412109375,
+          315.1629638671875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 1.8769,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.39501953125,
+          74.53106689453125
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "46": [
+      {
+        "timestamp": 1.9186,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          358.5086975097656,
+          314.99493408203125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 1.9186,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.2073974609375,
+          74.48915100097656
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "47": [
+      {
+        "timestamp": 1.9603,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          358.0419616699219,
+          314.6966552734375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 1.9603,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.1162109375,
+          74.69505310058594
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "48": [
+      {
+        "timestamp": 2.002,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          357.78363037109375,
+          314.31292724609375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 2.002,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.6878662109375,
+          73.938232421875
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "49": [
+      {
+        "timestamp": 2.0437,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          357.39306640625,
+          314.001953125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 2.0437,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.00634765625,
+          74.10777282714844
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "50": [
+      {
+        "timestamp": 2.0854,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          357.10028076171875,
+          313.77642822265625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "51": [
+      {
+        "timestamp": 2.1271,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          356.80548095703125,
+          313.6759338378906
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "52": [
+      {
+        "timestamp": 2.1688,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          356.47906494140625,
+          313.523193359375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "53": [
+      {
+        "timestamp": 2.2105,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          356.18505859375,
+          313.49853515625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 2.2105,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.5077514648438,
+          74.77102661132812
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "54": [
+      {
+        "timestamp": 2.2522,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.98175048828125,
+          313.3968505859375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 2.2522,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.69287109375,
+          75.82215118408203
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "55": [
+      {
+        "timestamp": 2.294,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.70355224609375,
+          313.248046875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 2.294,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.6754150390625,
+          76.42850494384766
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "56": [
+      {
+        "timestamp": 2.3357,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.468017578125,
+          313.05194091796875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 2.3357,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.4898071289062,
+          76.28309631347656
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "57": [
+      {
+        "timestamp": 2.3774,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.3762512207031,
+          312.89874267578125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 2.3774,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          691.9305419921875,
+          76.08805847167969
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "58": [
+      {
+        "timestamp": 2.4191,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.43914794921875,
+          312.58941650390625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 2.4191,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          691.65234375,
+          76.07935333251953
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "59": [
+      {
+        "timestamp": 2.4608,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.43060302734375,
+          312.40179443359375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 2.4608,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.2230224609375,
+          76.500732421875
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "60": [
+      {
+        "timestamp": 2.5025,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.43218994140625,
+          312.20751953125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 2.5025,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.2874755859375,
+          76.67517852783203
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "61": [
+      {
+        "timestamp": 2.5442,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.37744140625,
+          312.0767822265625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 2.5442,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.5768432617188,
+          77.50257873535156
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "62": [
+      {
+        "timestamp": 2.5859,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.41534423828125,
+          311.9207763671875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 2.5859,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.3106079101562,
+          78.24732971191406
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "63": [
+      {
+        "timestamp": 2.6276,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.5216369628906,
+          311.8419189453125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 2.6276,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.530029296875,
+          78.5926284790039
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "64": [
+      {
+        "timestamp": 2.6693,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.5940246582031,
+          311.751220703125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "65": [
+      {
+        "timestamp": 2.711,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.51641845703125,
+          311.6637878417969
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 2.711,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.9808349609375,
+          79.03703308105469
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "66": [
+      {
+        "timestamp": 2.7527,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.593994140625,
+          311.56988525390625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 2.7527,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.7784423828125,
+          79.29818725585938
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "67": [
+      {
+        "timestamp": 2.7945,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.67401123046875,
+          311.5133361816406
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "68": [
+      {
+        "timestamp": 2.8362,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.6479797363281,
+          311.4329833984375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "69": [
+      {
+        "timestamp": 2.8779,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.591552734375,
+          311.3094787597656
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "70": [
+      {
+        "timestamp": 2.9196,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.4397277832031,
+          311.088134765625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "71": [
+      {
+        "timestamp": 2.9613,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.3581848144531,
+          310.9681396484375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 2.9613,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.7001342773438,
+          81.20303344726562
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "72": [
+      {
+        "timestamp": 3.003,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.5948486328125,
+          310.8799743652344
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.003,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.17724609375,
+          81.22563171386719
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "73": [
+      {
+        "timestamp": 3.0447,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          355.91192626953125,
+          310.88104248046875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "74": [
+      {
+        "timestamp": 3.0864,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          356.1914367675781,
+          310.943603515625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "75": [
+      {
+        "timestamp": 3.1281,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          356.7580871582031,
+          310.9886474609375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "76": [
+      {
+        "timestamp": 3.1698,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          357.35638427734375,
+          311.0600891113281
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "77": [
+      {
+        "timestamp": 3.2115,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          357.86376953125,
+          311.28125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "78": [
+      {
+        "timestamp": 3.2532,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          358.39764404296875,
+          311.34716796875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "79": [
+      {
+        "timestamp": 3.295,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          358.4754638671875,
+          311.41558837890625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "80": [
+      {
+        "timestamp": 3.3367,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          358.76483154296875,
+          311.4742431640625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.3367,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.3062744140625,
+          76.32295227050781
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "81": [
+      {
+        "timestamp": 3.3784,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          359.0480041503906,
+          311.570068359375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.3784,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.34130859375,
+          77.45604705810547
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "82": [
+      {
+        "timestamp": 3.4201,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          359.4759521484375,
+          311.68170166015625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "83": [
+      {
+        "timestamp": 3.4618,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          359.7191162109375,
+          311.81695556640625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "84": [
+      {
+        "timestamp": 3.5035,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          359.9658203125,
+          311.8704833984375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "85": [
+      {
+        "timestamp": 3.5452,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          360.3180236816406,
+          311.97100830078125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.5452,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.2753295898438,
+          76.03619384765625
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "86": [
+      {
+        "timestamp": 3.5869,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          360.6161193847656,
+          312.02740478515625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.5869,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.0816650390625,
+          75.58268737792969
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "87": [
+      {
+        "timestamp": 3.6286,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          360.8980712890625,
+          312.19390869140625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.6286,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.1666870117188,
+          75.01980590820312
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "88": [
+      {
+        "timestamp": 3.6703,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.052001953125,
+          312.286376953125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.6703,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.9478759765625,
+          72.80075073242188
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "89": [
+      {
+        "timestamp": 3.712,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.2178955078125,
+          312.41595458984375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.712,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.2908935546875,
+          73.06415557861328
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "90": [
+      {
+        "timestamp": 3.7537,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.379638671875,
+          312.44342041015625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.7537,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.298583984375,
+          73.08441162109375
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "91": [
+      {
+        "timestamp": 3.7955,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.56573486328125,
+          312.45465087890625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "92": [
+      {
+        "timestamp": 3.8372,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.63568115234375,
+          312.44696044921875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "93": [
+      {
+        "timestamp": 3.8789,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.7373962402344,
+          312.4324951171875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.8789,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.0792236328125,
+          71.43840026855469
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "94": [
+      {
+        "timestamp": 3.9206,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.782958984375,
+          312.43280029296875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.9206,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.037109375,
+          70.91036224365234
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "95": [
+      {
+        "timestamp": 3.9623,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.8345642089844,
+          312.41241455078125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 3.9623,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.0064697265625,
+          70.3157958984375
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "96": [
+      {
+        "timestamp": 4.004,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.8662109375,
+          312.3486328125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.004,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.78515625,
+          69.71467590332031
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "97": [
+      {
+        "timestamp": 4.0457,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.92706298828125,
+          312.3060302734375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.0457,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.3697509765625,
+          68.97825622558594
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "98": [
+      {
+        "timestamp": 4.0874,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.9188232421875,
+          312.2732849121094
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.0874,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.1425170898438,
+          68.40824890136719
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "99": [
+      {
+        "timestamp": 4.1291,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.96734619140625,
+          312.24969482421875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.1291,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.1657104492188,
+          67.49008178710938
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "100": [
+      {
+        "timestamp": 4.1708,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.9874267578125,
+          312.1683044433594
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.1708,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.0299072265625,
+          67.17446899414062
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "101": [
+      {
+        "timestamp": 4.2125,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.9916687011719,
+          312.10321044921875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.2125,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.060791015625,
+          66.38866424560547
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "102": [
+      {
+        "timestamp": 4.2542,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.9631042480469,
+          312.0411071777344
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.2542,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.0401611328125,
+          66.04039001464844
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "103": [
+      {
+        "timestamp": 4.296,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.9560546875,
+          312.002197265625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.296,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.00830078125,
+          65.88154602050781
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "104": [
+      {
+        "timestamp": 4.3377,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.90618896484375,
+          311.9165344238281
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.3377,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.04248046875,
+          65.64749908447266
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "105": [
+      {
+        "timestamp": 4.3794,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.873291015625,
+          311.87371826171875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.3794,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.0185546875,
+          65.31974792480469
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "106": [
+      {
+        "timestamp": 4.4211,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.8193359375,
+          311.86541748046875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.4211,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.996337890625,
+          65.20235443115234
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "107": [
+      {
+        "timestamp": 4.4628,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.8131103515625,
+          311.86944580078125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.4628,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.066162109375,
+          65.3140869140625
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "108": [
+      {
+        "timestamp": 4.5045,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.7633972167969,
+          311.86376953125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.5045,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.0513305664062,
+          65.6547622680664
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "109": [
+      {
+        "timestamp": 4.5462,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.7152099609375,
+          311.8779296875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.5462,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.0842895507812,
+          66.08360290527344
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "110": [
+      {
+        "timestamp": 4.5879,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.67706298828125,
+          311.8403625488281
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.5879,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.03125,
+          66.41461944580078
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "111": [
+      {
+        "timestamp": 4.6296,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.646728515625,
+          311.84161376953125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.6296,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.2464599609375,
+          66.6606674194336
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "112": [
+      {
+        "timestamp": 4.6713,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.5218200683594,
+          311.8458251953125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.6713,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.1502075195312,
+          67.43243408203125
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "113": [
+      {
+        "timestamp": 4.713,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.35589599609375,
+          311.8262939453125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.713,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.9595947265625,
+          68.1826171875
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "114": [
+      {
+        "timestamp": 4.7547,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.2174987792969,
+          311.82098388671875
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.7547,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          692.6968994140625,
+          68.83479309082031
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "115": [
+      {
+        "timestamp": 4.7965,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          361.01922607421875,
+          311.80255126953125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.7965,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.0367431640625,
+          69.25154876708984
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "116": [
+      {
+        "timestamp": 4.8382,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          360.8869323730469,
+          311.835693359375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 4.8382,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          693.3167724609375,
+          69.71151733398438
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "117": [
+      {
+        "timestamp": 4.8799,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          360.7982177734375,
+          311.8580322265625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "118": [
+      {
+        "timestamp": 4.9216,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          360.69146728515625,
+          311.77032470703125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "119": [
+      {
+        "timestamp": 4.9633,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          360.53155517578125,
+          311.7484436035156
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "120": [
+      {
+        "timestamp": 5.005,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          360.2845458984375,
+          311.727783203125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ],
+    "121": [
+      {
+        "timestamp": 5.0467,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          360.0915222167969,
+          311.67266845703125
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.0467,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.2633666992188,
+          73.91246032714844
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "122": [
+      {
+        "timestamp": 5.0884,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          359.9676513671875,
+          311.6002197265625
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.0884,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.0821533203125,
+          74.99870300292969
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "123": [
+      {
+        "timestamp": 5.1301,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          359.78131103515625,
+          311.5302734375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.1301,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.0596923828125,
+          76.04460906982422
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "124": [
+      {
+        "timestamp": 5.1718,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          359.598876953125,
+          311.4700927734375
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      },
+      {
+        "timestamp": 5.1718,
+        "track_id": 2,
+        "class_name": "barcode",
+        "centroid": [
+          694.5302734375,
+          75.65068817138672
+        ],
+        "zones_inside": [],
+        "nearby_tracks": []
+      }
+    ],
+    "125": [
+      {
+        "timestamp": 5.2135,
+        "track_id": 1,
+        "class_name": "small_load_carrier",
+        "centroid": [
+          359.42138671875,
+          311.4199523925781
+        ],
+        "zones_inside": [
+          "exit_zone_dock_door"
+        ],
+        "nearby_tracks": []
+      }
+    ]
+  },
+  "zone_transitions": [
+    {
+      "frame": 0,
+      "timestamp": 0.0,
+      "track_id": 1,
+      "class_name": "small_load_carrier",
+      "zone_name": "exit_zone_dock_door",
+      "event_type": "entered"
+    }
+  ]
+}

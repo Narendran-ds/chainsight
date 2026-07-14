@@ -1,0 +1,5 @@
+{
+  "video_path": "data/staged_clips/videos/_reserve_blocked_exit_outdoor.mp4",
+  "zones_path": "configs/zones_outdoor_exit_test.json",
+  "model_path": "models/finetuned/run2_exit_marker/weights/best.pt"
+}

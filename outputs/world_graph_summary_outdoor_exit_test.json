@@ -1,0 +1,44 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "node_type": "track",
+      "class_name": "small_load_carrier",
+      "first_seen_frame": 0,
+      "last_seen_frame": 125,
+      "age_frames": 126,
+      "duration_seconds": 5.2135,
+      "average_speed": 5.1846,
+      "status": "alive",
+      "id": 1
+    },
+    {
+      "node_type": "track",
+      "class_name": "barcode",
+      "first_seen_frame": 0,
+      "last_seen_frame": 124,
+      "age_frames": 125,
+      "duration_seconds": 5.1718,
+      "average_speed": 12.8837,
+      "status": "lost",
+      "id": 2
+    },
+    {
+      "node_type": "zone",
+      "id": "exit_zone_dock_door"
+    }
+  ],
+  "links": [
+    {
+      "relation": "visited_zone",
+      "transition_count": 1,
+      "frame_count": 126,
+      "first_frame": 0,
+      "last_frame": 125,
+      "source": 1,
+      "target": "exit_zone_dock_door"
+    }
+  ]
+}

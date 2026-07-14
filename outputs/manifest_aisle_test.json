@@ -1,0 +1,5 @@
+{
+  "video_path": "data/staged_clips/videos/forklift_person_aisle.mp4",
+  "zones_path": "configs/zones_aisle_test.json",
+  "model_path": "models/finetuned/run2_exit_marker/weights/best.pt"
+}

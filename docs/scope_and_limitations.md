@@ -146,4 +146,42 @@ it does not determine fault or root cause.
 
 ---
 
-*Last updated: 2026-07-13, following the R2 resolution-normalization fix.*
+## 7. Vehicle Operator vs. Pedestrian Ambiguity
+
+The pipeline has no class distinguishing a vehicle **operator** from a
+**pedestrian** — both are simply detected as `person`. Normally this is
+harmless (an operator sitting inside a forklift's cab is rarely detected as a
+separate bounding box), but on footage where the driver is clearly visible
+through an open-sided cab, YOLO can produce a second `person` track nested
+entirely inside the forklift's own bounding box.
+
+**Confirmed on a validation clip** (`forklift_person_aisle.mp4`, run name
+`aisle_test`, not one of the two primary demo clips): track 294 ("person")
+exists for only 18 frames (490-507) and its bbox has a 1.0 overlap ratio with
+the forklift's bbox for its entire lifespan — i.e. it's the driver, not a
+separate person. This fired R1 (Restricted Zone Intrusion) as if a pedestrian
+had entered the zone, when in fact it was the forklift's own operator driving
+through the zone they operate in. The same effect would inflate R2 near-miss
+proximity counts (a driver is always ~0 real-world distance from their own
+vehicle), producing spurious "near-miss" signal between a forklift and
+itself.
+
+**Checked against the two primary demo clips (`nearmiss`, `blocked_exit`):
+not present.** In `nearmiss`, every `person` track has zero bbox overlap with
+the forklift at any frame — the operator was never detected as a separate
+track in that footage, likely because the cab is less visually open. This is
+specific to footage/camera-angle, not a universal bug, but it's a real gap:
+**there is currently no way to distinguish "vehicle operator" from
+"pedestrian" in the class taxonomy**, so any new clip should be checked for
+this before trusting an R1/R2 event involving a forklift.
+
+**Recommended next step (not yet done):** either a dedicated `operator`
+class (requires new labeled data), or a heuristic filter treating a `person`
+track whose bbox stays highly overlapped with a `forklift` track for its
+entire lifespan as the operator rather than a separate pedestrian, excluding
+it from R1/R2 evaluation. Deferred as a larger design change outside current
+scope.
+
+---
+
+*Last updated: 2026-07-14, after validating aisle_test/outdoor_exit_test as new runs.*
