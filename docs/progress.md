@@ -116,11 +116,22 @@ and `docs/scope_and_limitations.md` for known limitations/caveats on the complet
       accurately as the "zero events, and that's the point" demonstration instead, with
       `outdoor_exit_test` noted as where R4 actually fires (validation-only, due to the
       barrier-misclassification caveat).
-    - Audited all 0-byte files/dirs in the repo and compared `.env`/`.env.example` — see the
-      conversation this ran in for the full per-file table; nothing was deleted, pending
-      explicit confirmation. Also surfaced a stray locked git worktree
-      (`.claude/worktrees/docs-cleanup/`, checked out at an old commit) unrelated to any
-      action taken this session — flagged, not touched.
+    - Audited all 0-byte files/dirs in the repo and compared `.env`/`.env.example`
+      (not redundant — `.env` is gitignored/untracked, `.env.example` is the only
+      setup-discoverability a future clone has). After explicit confirmation, deleted 8
+      confirmed-dead files: `configs/{rules,train,zones}_config.yaml` (verified unreferenced
+      both statically and via dynamic path construction before removal), the 3
+      `_old_corrupted_*.mp4` placeholder videos, `models/pretrained/yolov8s.pt` (dead —
+      `train.py`'s `PRETRAINED_DIR` constant is defined but never read), and
+      `src/world_graph/state_history.py` (no references, never documented as planned). Kept
+      the two `notebooks/*.ipynb` stubs (may still be used for exploration) and all
+      documented-as-planned stubs/`__init__.py` markers. Committed as two commits — a
+      "pre-cleanup snapshot" immediately before the deletions, so it's a one-commit revert if
+      needed.
+    - Also surfaced a stray locked git worktree (`.claude/worktrees/docs-cleanup/`, a full
+      duplicate checkout of the repo at an old commit) plus `.claude/settings.local.json` —
+      neither was previously gitignored. Added `.claude/` to `.gitignore`; the worktree itself
+      was flagged, not removed (unclear origin, left for the user to review/remove directly).
 
 ---
 
@@ -138,8 +149,9 @@ and `docs/scope_and_limitations.md` for known limitations/caveats on the complet
   validation run; deferred as a larger design change (see `docs/scope_and_limitations.md` §7).
 - `src/vision/detector.py` — cosmetic split of detection out of `tracker.py`'s combined
   detect+track stage. No functional gap; `tracker.py` already does both.
-- `configs/rules_config.yaml`, `configs/zones_config.yaml` — YAML config surface. CLI args +
-  dataclass defaults already cover this; would just be ergonomics.
+- YAML config surface for rules/zones — CLI args + dataclass defaults already cover this; would
+  just be ergonomics. (The placeholder `configs/{rules,zones}_config.yaml` stub files were
+  removed in the 2026-07-14 cleanup pass since nothing referenced them.)
 - `scripts/run_finetune.py`, `scripts/annotate_clips.py` — training/data-prep tooling, unrelated
   to the reasoning pipeline being demoable.
 

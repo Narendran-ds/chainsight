@@ -32,9 +32,11 @@ stub files (0 bytes)** — they exist as placeholders for planned modules but co
 - `src/narration/nim_client.py` — the NVIDIA NIM narration provider is not yet implemented
   (Gemini, via `gemini_client.py`, is — see Narration Layer below)
 - `scripts/run_finetune.py`, `scripts/annotate_clips.py`
-- `configs/rules_config.yaml`, `configs/zones_config.yaml` — rule/zone config is currently
-  wired via CLI args and dataclass defaults (`RuleEngineConfig`, `SpatialConfig`), not these
-  YAML files
+
+Rule/zone config is wired via CLI args and dataclass defaults (`RuleEngineConfig`,
+`SpatialConfig`) rather than a YAML config file — `configs/rules_config.yaml`/
+`zones_config.yaml` placeholders were removed (2026-07-14 cleanup pass) since nothing
+referenced them, statically or dynamically.
 
 **Implemented and working:** `src/vision/tracker.py`, `src/vision/train.py`,
 `src/spatial/*`, `src/world_graph/*`, `src/rules/*`, `src/utils/{track_quality,video_io,visualization}.py`,
