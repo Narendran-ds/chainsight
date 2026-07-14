@@ -37,7 +37,6 @@ def render(rule_events: list) -> None:
     selection = st.dataframe(
         table,
         hide_index=True,
-        use_container_width=True,
         on_select="rerun",
         selection_mode="single-row",
         key="event_table",

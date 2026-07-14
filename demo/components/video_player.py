@@ -72,4 +72,4 @@ def render(
     if not (video_path and Path(video_path).exists()):
         st.caption("Source video not found for this run — showing zone/track overlay only.")
 
-    st.image(frame, caption=f"Frame {frame_idx}", channels="BGR", use_container_width=True)
+    st.image(frame, caption=f"Frame {frame_idx}", channels="BGR")

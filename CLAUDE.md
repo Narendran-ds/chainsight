@@ -261,11 +261,16 @@ demo/interview is unnecessary risk for zero benefit over pre-generating outputs)
   same script run, jumping the scrubber to that event's frame. Chosen over the
   `streamlit-timeline` package in `requirements.txt` (now commented out) because that package
   is a very early (0.0.2), thinly-maintained component; native selection is simpler. Pinned
-  `streamlit==1.50.0` as the known-good, tested version; `use_container_width=True` (not the
-  newer `width="stretch"` string API) is used on `st.dataframe`/`st.image` for compatibility —
-  a real, differently-installed Streamlit hit `TypeError: 'str' object cannot be interpreted
-  as an integer` on `width="stretch"` (that string API postdates the version installed there),
-  so avoid reintroducing it unless you've confirmed the target Streamlit version supports it.
+  `streamlit==1.50.0` as the known-good, tested version. Neither `st.dataframe` nor `st.image`
+  pass any width-related kwarg (no `width="stretch"`, no `use_container_width`) — a real,
+  differently-installed Streamlit hit two different crashes in succession trying both: first
+  `TypeError: 'str' object cannot be interpreted as an integer` on `width="stretch"` (that
+  string API postdates the version installed there), then `TypeError: ImageMixin.image() got
+  an unexpected keyword argument 'use_container_width'` on the very same env for `st.image`
+  (already past that param's removal there). The two Streamlit APIs for "full width" have each
+  been renamed/removed on different timelines per element, so don't reintroduce either without
+  confirming the target Streamlit version first — omitting the param entirely is what's
+  actually version-safe.
 - **`demo/components/report_card.py`**: narration panel — clip summary + per-event narration
   from `narration_<run>.json`, or the exact `scripts/run_narration.py` command to generate it
   if that file is absent for the selected run.
