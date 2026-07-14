@@ -9,9 +9,11 @@ narration (Gemini) — all browsable afterward in a Streamlit demo.
 **Only the detector is a trained model.** Every stage after YOLOv8 — tracking, spatial
 reasoning, the scene graph, and the rule engine — is deterministic, non-learned Python. That's
 a deliberate choice: it keeps every rule decision traceable back to explicit code, not a second
-model's judgment. See [`docs/scope_and_limitations.md`](docs/scope_and_limitations.md) for the
-full reasoning and known limitations, and [`docs/progress.md`](docs/progress.md) for what's
-built vs. still open.
+model's judgment. See [`docs/architecture.md`](docs/architecture.md) for a fuller walkthrough
+of the pipeline, [`docs/scope_and_limitations.md`](docs/scope_and_limitations.md) for the full
+reasoning and known limitations, [`docs/demo_scenarios.md`](docs/demo_scenarios.md) for what
+each demo clip shows and why, and [`docs/progress.md`](docs/progress.md) for what's built vs.
+still open.
 
 ```
 YOLOv8 + ByteTrack -> zones/proximity -> scene graph -> rule engine -> narration -> demo
@@ -30,7 +32,8 @@ streamlit run demo/app.py
 ```
 
 Pick `nearmiss` or `blocked_exit` from the sidebar. You'll see the fired rule events, a
-frame-by-frame scrubber with bounding boxes and zone overlays drawn live, and (for `nearmiss`)
+frame-by-frame scrubber (with "jump to frame" / "jump to time (s)" inputs alongside it, all
+three kept in sync) with bounding boxes and zone overlays drawn live, and (for `nearmiss`)
 Gemini narration. `outputs/` and `models/finetuned/run2_exit_marker/` are committed to the repo
 for exactly this reason — clone and run, nothing to download first.
 
@@ -80,6 +83,19 @@ python src/vision/train.py --run-name <name>
 See `CLAUDE.md`'s "Commands" section for flags and details (dry-run mode, resuming, W&B
 logging).
 
+### Validation runs beyond the two primary demo clips
+
+`nearmiss` and `blocked_exit` are the two clips the demo is tuned around, but the pipeline has
+also been run end-to-end on two additional clips (`aisle_test`, `outdoor_exit_test`) purely to
+stress-test it against footage it wasn't designed for — both are browsable in the demo too.
+Both surfaced genuine limitations rather than confirming a clean result: a panning (non-fixed)
+camera invalidates zone-based reasoning regardless of thresholds, a forklift's own driver can
+be detected as a separate `person` and spuriously fire the near-miss/intrusion rules, and the
+17-class detector has no "barrier"/"cone" class, so an obstruction gets misclassified even
+when the rule that depends on it still fires correctly. All three are written up in
+`docs/scope_and_limitations.md` §5 and §7 — worth reading before pointing this pipeline at new
+footage.
+
 ## The five rules
 
 | Rule | Fires when |
@@ -106,8 +122,8 @@ src/
 scripts/        one CLI per stage, plus data-prep/training tooling
 demo/           Streamlit app — browses precomputed runs from outputs/
 configs/        zone definitions, class mappings
-docs/           scope/limitations writeup, progress tracker
-tests/          pytest regression suite (55 tests)
+docs/           architecture, scope/limitations, demo scenarios, progress tracker
+tests/          pytest regression suite (58 tests)
 ```
 
 ## Testing

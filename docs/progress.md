@@ -35,7 +35,7 @@ and `docs/scope_and_limitations.md` for known limitations/caveats on the complet
    `gemini-flash-latest` (not `gemini-2.5-flash`/`gemini-2.0-flash`, which 404'd or hit a
    hard 0-quota 429 on the tested project/key).
 8. **Test suite** — `tests/test_spatial.py`, `test_rules.py`, `test_pipeline.py`,
-   `test_narration.py`, `test_visualization.py`, `test_run_data.py` (55 tests total, all
+   `test_narration.py`, `test_visualization.py`, `test_run_data.py` (58 tests total, all
    passing). Narration tests are fully mocked — no real API calls in CI/local test runs.
 9. **Docs housekeeping** — `CLAUDE.md` corrected in several places where it had gone stale
    (claimed `run_pipeline.py`, `.env.example`, and most test files were empty stubs; they
@@ -74,6 +74,53 @@ and `docs/scope_and_limitations.md` for known limitations/caveats on the complet
     quickstart (the repo ships with committed sample outputs + trained weights, so the demo
     runs immediately after `pip install`), running the pipeline on new video, training a new
     detector, the 5 rules, and project structure.
+12. **Two validation runs onboarded** (`aisle_test`, `outdoor_exit_test`) — hand-authored
+    `zones_<run>.json` for both (`define_zones.py` is interactive-only, can't run headlessly),
+    ran the full pipeline with `--narrate` for each, without touching `nearmiss`/`blocked_exit`.
+    Surfaced two genuine, previously-undocumented limitations rather than confirming a clean
+    result:
+    - `aisle_test`'s camera **pans** to follow the forklift (verified by diffing frames at
+      0/390/700) — invalidates zone-based reasoning regardless of thresholds, since a zone
+      polygon is only valid for one camera position.
+    - The R1 event that fired on `aisle_test` is **not a real safety signal** — the "person"
+      track has a 1.0 bbox-overlap with the forklift for its entire 18-frame lifespan, i.e.
+      it's the driver visible through the cab, not a pedestrian. Checked and confirmed absent
+      from `nearmiss`/`blocked_exit`. Documented in `docs/scope_and_limitations.md` §7.
+    - `outdoor_exit_test`'s R4 event fired correctly (genuinely fixed camera, 5.2s continuous
+      presence vs. 3.0s threshold), but the blocking object is misclassified as
+      `small_load_carrier` — it's actually an orange traffic barrier, and the 17-class detector
+      has no barrier/cone class. The rule's mechanical trigger is valid; the narration text
+      naming the object is not.
+13. **Demo UI pass** (2026-07-14): title now leads with 🏭; sidebar gets a bold "⚙️ Controls"
+    heading + divider above the run picker (matching a reference layout); Frame viewer gained
+    "Jump to frame" (int) and "Jump to time (s)" (float) number inputs alongside the slider,
+    all three kept in sync via a shared `_sync()` helper and per-widget `on_change` callbacks
+    (`demo/components/video_player.py`) — `run_data.derive_fps()` recovers fps from existing
+    `tracks.json` data for the time<->frame conversion, no schema change needed. Verified with
+    `AppTest` in every sync direction (each widget -> the other two, plus the existing
+    rule-event-table jump).
+14. **Documentation cleanup pass** (2026-07-14):
+    - `docs/scope_and_limitations.md` gained 3 new sections: real-time/streaming explicitly
+      framed as a non-goal (§1.1 — why, and what genuine real-time support would require
+      architecturally), R4/R5's last-frame (not first-crossed-threshold) reporting behavior
+      (§8 — explains why a duration-rule's frame can look identical to frame 0 in the demo),
+      and a Deferred Enhancements list (§9 — NIM provider, R2 object-size normalization).
+      §7's operator-vs-pedestrian mitigation path was sharpened to name a `forklift_operator`
+      class specifically.
+    - `docs/architecture.md` written: narrative walkthrough of the 5-stage pipeline with an
+      ASCII data-flow diagram, the config-dataclass pattern, the single-learned-model
+      principle and why it matters, and a table of per-run output artifacts.
+    - `docs/demo_scenarios.md` written — and in writing it, found the original assumption that
+      `blocked_exit` demonstrates R4 firing was wrong: `rule_events_blocked_exit.json` is an
+      empty list (2.96s vs. 3.0s threshold, a real borderline case). Documented `blocked_exit`
+      accurately as the "zero events, and that's the point" demonstration instead, with
+      `outdoor_exit_test` noted as where R4 actually fires (validation-only, due to the
+      barrier-misclassification caveat).
+    - Audited all 0-byte files/dirs in the repo and compared `.env`/`.env.example` — see the
+      conversation this ran in for the full per-file table; nothing was deleted, pending
+      explicit confirmation. Also surfaced a stray locked git worktree
+      (`.claude/worktrees/docs-cleanup/`, checked out at an old commit) unrelated to any
+      action taken this session — flagged, not touched.
 
 ---
 
@@ -85,15 +132,17 @@ and `docs/scope_and_limitations.md` for known limitations/caveats on the complet
   detected bbox size (not just frame resolution), so it's robust to camera zoom/distance too.
   Explicitly deferred after the resolution-normalization work (see
   `docs/scope_and_limitations.md` §5's "Recommended next step").
+- Vehicle operator vs. pedestrian distinction for R1/R2 — either a dedicated `operator` class
+  (new labeled data) or a heuristic filter excluding a `person` track that stays highly
+  bbox-overlapped with a `forklift` track for its whole lifespan. Surfaced by the `aisle_test`
+  validation run; deferred as a larger design change (see `docs/scope_and_limitations.md` §7).
 - `src/vision/detector.py` — cosmetic split of detection out of `tracker.py`'s combined
   detect+track stage. No functional gap; `tracker.py` already does both.
 - `configs/rules_config.yaml`, `configs/zones_config.yaml` — YAML config surface. CLI args +
   dataclass defaults already cover this; would just be ergonomics.
 - `scripts/run_finetune.py`, `scripts/annotate_clips.py` — training/data-prep tooling, unrelated
   to the reasoning pipeline being demoable.
-- `docs/architecture.md`, `docs/demo_scenarios.md` — deeper portfolio-facing docs (`README.md`
-  is now written, covering the essentials of both).
 
 ---
 
-*Last updated: 2026-07-14, after building/verifying the Streamlit demo and writing README.md.*
+*Last updated: 2026-07-14, after the documentation cleanup pass (item 14 below).*

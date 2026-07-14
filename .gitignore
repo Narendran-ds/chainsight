@@ -37,3 +37,6 @@ Thumbs.db
 
 # ==== Secrets ====
 .env
+
+# ==== Claude Code local state (settings, worktrees) ====
+.claude/

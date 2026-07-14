@@ -21,6 +21,35 @@ alerting, outdoor environments, or camera angles substantially different from
 the training data. These would require additional data collection and are
 out of scope for the current portfolio version.
 
+### 1.1 Real-time / streaming is a non-goal, not a missing feature
+
+ChainSight processes a complete, already-recorded clip — every stage assumes
+the full frame range is available before it runs. This is a deliberate
+architectural boundary, not something left unfinished:
+
+- **Rule evaluation is stateless per run, not per frame.** `RuleEngine.run()`
+  is called once against a fully-built `WorldQuery`/spatial-events dataset
+  for the whole clip. There is no notion of "the pipeline is currently
+  watching frame N and must decide right now" — every rule looks at
+  data that already exists on disk.
+- **R2/R4/R5 all require full-clip lookback.** R2's consecutive-frame
+  counter, R4's continuous-presence duration, and R5's enter/leave duration
+  all need to see a track's *entire* history (or at least look ahead to
+  where a streak ends) to decide whether a threshold was met. In a batch
+  pipeline this is a simple loop over `spatial_events.json`; in a live
+  stream there is no "end of the streak" to look ahead to yet.
+- **Tracker-level occlusion recovery (`lost`/`reappeared`) is easier
+  offline.** `tracker.py` can be more forgiving about gaps because it never
+  has to commit to a decision under a real-time deadline.
+
+**What genuine real-time support would require** is a different
+architecture, not a flag on this one: stateful sliding-window processing
+(bounded lookback instead of full-clip access), live frame ingestion instead
+of a file on disk, and persistent per-track occupancy timers that update
+incrementally per frame rather than being computed once over the whole
+history. That's a rewrite of the spatial/rules layers' core assumptions, not
+an extension of them — hence a scope boundary rather than a roadmap item.
+
 ---
 
 ## 2. Detection Model (YOLOv8) — Known Limitations
@@ -175,13 +204,64 @@ specific to footage/camera-angle, not a universal bug, but it's a real gap:
 "pedestrian" in the class taxonomy**, so any new clip should be checked for
 this before trusting an R1/R2 event involving a forklift.
 
-**Recommended next step (not yet done):** either a dedicated `operator`
-class (requires new labeled data), or a heuristic filter treating a `person`
-track whose bbox stays highly overlapped with a `forklift` track for its
-entire lifespan as the operator rather than a separate pedestrian, excluding
-it from R1/R2 evaluation. Deferred as a larger design change outside current
-scope.
+**Mitigation path (not yet done):** the cleanest fix is a dedicated
+`forklift_operator` class added to the dataset in a future training pass, so
+the detector itself distinguishes "person driving a forklift" from "person
+on foot" — this is a data/training problem, not a rules-engine one. A
+cheaper interim option is a heuristic filter in `rules/engine.py`: treat a
+`person` track whose bbox stays highly overlapped with a `forklift` track
+for its entire lifespan as the operator and exclude it from R1/R2 evaluation.
+Both are deferred as changes outside current scope.
 
 ---
 
-*Last updated: 2026-07-14, after validating aisle_test/outdoor_exit_test as new runs.*
+## 8. R4/R5 — Duration-Rule Frame Reporting
+
+R4 (Exit Blockage) and R5 (Loitering) both report the **last** frame where
+their duration condition was confirmed, not the frame where the threshold
+was first crossed. Concretely: `engine.py`'s `_run_r4` accumulates a
+track's continuous per-frame presence in a zone across the whole clip, and
+only emits the `RuleEvent` once, using the *final* observed frame
+(`obs[-1]`) as `frame`/`timestamp` — the same pattern R5 uses at its `left`
+zone-transition frame. This is internally consistent between R4 and R5, but
+different from R2, which fires the moment its consecutive-frame counter
+first crosses `near_miss_min_consecutive_frames`, mid-stream.
+
+**Why this matters in practice:** for a condition that already existed
+before the clip started recording — e.g. an exit blocked by an object
+present from frame 0 — the reported "frame" is wherever the clip happens to
+end (or the track's last observation), not the moment it became a
+violation. Jumping to that frame in the demo shows a frame that looks
+visually identical to frame 0, which reads as confusing or broken even
+though the rule fired correctly. Confirmed on `outdoor_exit_test`: the
+barrier is present for all 126 frames, and R4 reports `frame=125` — the
+clip's last frame — with nothing visually different there from frame 0.
+
+**Decision:** left as-is. Changing which frame gets reported would change
+evaluated semantics for two rules simultaneously and touches existing
+tests/expectations; not pursued in this pass. Documented here so it isn't
+mistaken for a bug the next time it's noticed in a demo.
+
+---
+
+## 9. Deferred Enhancements (Out of Current Scope)
+
+Two extensions were deliberately not pursued, each for a specific reason
+rather than lack of time:
+
+- **NVIDIA NIM as an alternate narration provider** (`src/narration/nim_client.py`,
+  currently an empty stub). Gemini (`gemini_client.py`) already satisfies the
+  narration layer's requirements — constrained rephrasing of rule-engine
+  output, live-verified against a real API key. Adding a second provider
+  behind the same interface would be straightforward but wasn't necessary
+  for this project's scope.
+- **R2 object-size-relative distance normalization** — see §5's "Recommended
+  next step." Deferred after the resolution-normalization fix already
+  closed the main gap (thresholds silently never firing on 4K footage);
+  the remaining camera-framing/zoom sensitivity is a smaller, separate
+  problem not required for the two primary demo clips to work correctly.
+
+---
+
+*Last updated: 2026-07-14, following the documentation cleanup pass (real-time
+scope note, R4/R5 frame-reporting behavior, and deferred-enhancements list).*

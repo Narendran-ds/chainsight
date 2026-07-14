@@ -7,10 +7,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ChainSight is a warehouse safety reasoning pipeline: single fixed camera, offline batch
 processing of recorded video (not real-time). It detects objects/people (YOLOv8), tracks
 them (ByteTrack), reasons about zones and proximity (Shapely), builds a scene graph
-(NetworkX), and evaluates deterministic safety rules against it. See
-`docs/scope_and_limitations.md` for the authoritative scope/limitations writeup (system
-boundaries, known weak classes, the correlation-vs-causation framing for rule output). See
-`docs/progress.md` for a running checklist of what's completed vs. remaining.
+(NetworkX), and evaluates deterministic safety rules against it. See `docs/architecture.md`
+for a narrative walkthrough of the pipeline, `docs/scope_and_limitations.md` for the
+authoritative scope/limitations writeup (system boundaries, known weak classes, the
+correlation-vs-causation framing for rule output), `docs/demo_scenarios.md` for what to say
+when walking someone through the demo, and `docs/progress.md` for a running checklist of
+what's completed vs. remaining.
 
 **Only the YOLOv8 detector is a trained/learned model.** Every downstream stage — tracking,
 spatial reasoning, world-graph construction, and the rule engine — is deterministic,
@@ -33,15 +35,15 @@ stub files (0 bytes)** — they exist as placeholders for planned modules but co
 - `configs/rules_config.yaml`, `configs/zones_config.yaml` — rule/zone config is currently
   wired via CLI args and dataclass defaults (`RuleEngineConfig`, `SpatialConfig`), not these
   YAML files
-- `docs/architecture.md`, `docs/demo_scenarios.md` (`README.md` is now written — see below)
 
 **Implemented and working:** `src/vision/tracker.py`, `src/vision/train.py`,
 `src/spatial/*`, `src/world_graph/*`, `src/rules/*`, `src/utils/{track_quality,video_io,visualization}.py`,
 `src/pipeline.py` (single-entry orchestrator, `scripts/run_pipeline.py` is its CLI, and now
 also writes `outputs/manifest_<run>.json`), `src/narration/{gemini_client,narrator,prompt_templates}.py`
 (`scripts/run_narration.py` is its CLI — see Narration Layer below), `demo/app.py` +
-`demo/components/*` (Streamlit demo — see Demo Layer below), and the data-prep/CLI scripts
-listed below.
+`demo/components/*` (Streamlit demo — see Demo Layer below), `README.md`,
+`docs/{architecture,demo_scenarios,scope_and_limitations,progress}.md`, and the data-prep/CLI
+scripts listed below.
 
 ## Commands
 
@@ -125,7 +127,7 @@ pytest
 ```
 
 Collects real regression tests from `test_spatial.py`, `test_rules.py`, `test_pipeline.py`,
-`test_narration.py`, `test_visualization.py`, and `test_run_data.py` (55 tests total). Run a
+`test_narration.py`, `test_visualization.py`, and `test_run_data.py` (58 tests total). Run a
 single file with `pytest tests/test_rules.py` or a single test with
 `pytest tests/test_rules.py::test_name`.
 
@@ -212,6 +214,14 @@ scales `near_miss_distance_px` by the same `resolution_scale()` factor the spati
 (via `GraphBuilder.frame_width`), so the invariant holds regardless of the clip's actual
 resolution.
 
+R1/R2 have no way to distinguish a vehicle **operator** from a **pedestrian** — both are
+just the `person` class — so a forklift driver visible through an open cab can be detected as
+a second `person` track nested inside the forklift's own bbox, firing R1 (and inflating R2
+proximity counts) for the driver rather than a real bystander. Confirmed on a validation clip
+(`aisle_test`, not one of the two primary demo clips: `nearmiss`/`blocked_exit`, where this
+doesn't occur) — see `docs/scope_and_limitations.md` §7 before trusting an R1/R2 event on any
+new clip with a visibly-seated driver.
+
 **Narration layer** (`src/narration/`): `narrator.py`'s `Narrator` consumes `rule_events.json`
 and produces plain-English narration via Gemini (`gemini_client.py`, using the `google-genai`
 SDK — see requirements.txt for why not the deprecated `google-generativeai`) — one sentence
@@ -245,16 +255,30 @@ demo/interview is unnecessary risk for zero benefit over pre-generating outputs)
   for a run, so the UI can degrade gracefully instead of crashing. `index_tracks_by_frame()`
   builds a `frame_idx -> [tracks]` dict once per run (mirrors `analyzer.py`'s `frame_buckets`
   pattern) so the frame scrubber is an O(1) lookup per slider move, not a full history rescan.
-- **`demo/components/clip_picker.py`**: sidebar run selector; `st.stop()`s with a clear message
-  if `outputs/` has no runs yet.
+  `derive_fps()` recovers the clip's fps from `tracks.json`'s existing `frame`/`timestamp`
+  relationship (`timestamp = round(frame / fps, 4)`, set once by `tracker.py`) rather than
+  needing a dedicated `fps` field in `"_meta"` — works on `tracks.json` files written before
+  the frame<->time jump widgets (below) needed it.
+- **`demo/components/clip_picker.py`**: sidebar run selector, headed by a bold "⚙️ Controls"
+  heading + divider (matches a reference layout provided during the build). `st.stop()`s with
+  a clear message if `outputs/` has no runs yet.
 - **`demo/components/video_player.py`**: the frame-index scrubber (`st.session_state["current_frame"]`
-  is the single source of truth, shared with `event_timeline.py`). Overlays (bboxes, track IDs,
-  zone polygons) are drawn **live** from `tracks.json` + `zones.json` via
-  `src/utils/visualization.py` — deliberately *not* replaying `tracker.py`'s pre-rendered
-  `--annotated` video, so a rule event's frame can be jumped to directly with correct zone
-  overlays regardless of whether an annotated video was ever generated for that run. Falls back
-  to a blank canvas (`visualization.blank_canvas`) with a caption if the run's manifest is
-  missing or the source video file can't be opened, rather than erroring.
+  is the single source of truth, shared with `event_timeline.py`) plus two number inputs —
+  "Jump to frame" (int) and "Jump to time (s)" (float, via `derive_fps()`) — kept in lockstep
+  with the slider. Streamlit doesn't allow multiple widgets to share one key, so each of the
+  three has its own (`frame_slider`/`frame_number_input`/`time_number_input`); an `on_change`
+  callback on whichever widget fired writes the canonical `current_frame` plus all three
+  widgets' own keys via a shared `_sync()` helper, and `render()` re-runs that same `_sync()`
+  once at the top (before any widget is instantiated) so an *external* jump — `event_timeline.py`
+  setting `current_frame` directly from a row click — also propagates to all three. Verified
+  with Streamlit's `AppTest` in every direction (slider->inputs, each input->slider+other input,
+  external jump->all three). Overlays (bboxes, track IDs, zone polygons) are drawn **live** from
+  `tracks.json` + `zones.json` via `src/utils/visualization.py` — deliberately *not* replaying
+  `tracker.py`'s pre-rendered `--annotated` video, so a rule event's frame can be jumped to
+  directly with correct zone overlays regardless of whether an annotated video was ever
+  generated for that run. Falls back to a blank canvas (`visualization.blank_canvas`) with a
+  caption if the run's manifest is missing or the source video file can't be opened, rather
+  than erroring.
 - **`demo/components/event_timeline.py`**: rule-event table using Streamlit's native
   `st.dataframe(..., on_select="rerun", selection_mode="single-row")` — clicking a row sets
   `st.session_state["current_frame"]` before `video_player.py` instantiates its slider in the
