@@ -19,16 +19,21 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
+from dotenv import load_dotenv
+
 from src.pipeline import ChainSightPipeline, PipelineConfig
 from src.vision.tracker import TrackerConfig
 from src.spatial import SpatialConfig
 from src.world_graph import WorldGraphConfig
 from src.rules import RuleEngineConfig
+from src.narration import GeminiClientConfig
 
 logger = logging.getLogger("chainsight.pipeline.cli")
 
 
 def main():
+    load_dotenv()
+
     parser = argparse.ArgumentParser(description="ChainSight full pipeline (tracker -> spatial -> world_graph -> rules)")
     parser.add_argument("--model", required=True, help="Path to trained YOLOv8 .pt weights")
     parser.add_argument("--video", required=True, help="Path to input video")
@@ -68,6 +73,12 @@ def main():
     parser.add_argument("--loiter-min-seconds", type=float, default=10.0)
     parser.add_argument("--min-exit-block-seconds", type=float, default=3.0)
 
+    # --- narration (optional) ---
+    parser.add_argument("--narrate", action="store_true",
+                         help="Also run the Gemini narration stage on the fired rule events "
+                              "(requires GEMINI_API_KEY — see .env.example)")
+    parser.add_argument("--gemini-model", default="gemini-flash-latest")
+
     args = parser.parse_args()
 
     try:
@@ -101,6 +112,8 @@ def main():
                 loiter_min_seconds=args.loiter_min_seconds,
                 min_exit_block_seconds=args.min_exit_block_seconds,
             ),
+            narrate=args.narrate,
+            narration=GeminiClientConfig(model=args.gemini_model),
         )
     except ValueError as e:
         logger.error(f"Invalid pipeline configuration: {e}")
@@ -113,13 +126,17 @@ def main():
         logger.error(f"Pipeline run failed: {e}")
         raise SystemExit(1)
 
-    logger.info(
+    summary_lines = (
         "\nPipeline complete:\n"
+        f"  manifest            -> {result.manifest_path}\n"
         f"  tracks              -> {result.tracks_path}\n"
         f"  spatial events      -> {result.spatial_events_path}\n"
         f"  world graph summary -> {result.world_graph_summary_path}\n"
         f"  rule events         -> {result.rule_events_path} ({len(result.rule_events)} event(s))"
     )
+    if result.narration_path:
+        summary_lines += f"\n  narration           -> {result.narration_path}"
+    logger.info(summary_lines)
 
 
 if __name__ == "__main__":

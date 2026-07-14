@@ -32,6 +32,7 @@ from .vision.tracker import ChainSightTracker, TrackerConfig
 from .spatial import SpatialAnalyzer, SpatialConfig
 from .world_graph import GraphBuilder, WorldGraphConfig, WorldQuery
 from .rules import RuleEngine, RuleEngineConfig, RuleEvent
+from .narration import GeminiClient, GeminiClientConfig, Narrator
 
 logging.basicConfig(
     level=logging.INFO,
@@ -58,6 +59,11 @@ class PipelineConfig:
     world_graph: WorldGraphConfig = field(default_factory=WorldGraphConfig)
     rules: RuleEngineConfig = field(default_factory=RuleEngineConfig)
 
+    # Optional final stage — off by default so existing pipeline runs
+    # (and their outputs/*.json fixtures) are unaffected unless requested.
+    narrate: bool = False
+    narration: GeminiClientConfig = field(default_factory=GeminiClientConfig)
+
     def __post_init__(self):
         if self.tracker is None:
             self.tracker = TrackerConfig(model_path=self.model_path)
@@ -72,11 +78,13 @@ class PipelineConfig:
 
 @dataclass
 class PipelineResult:
+    manifest_path: str
     tracks_path: str
     spatial_events_path: str
     world_graph_summary_path: str
     rule_events_path: str
     rule_events: List[RuleEvent]
+    narration_path: Optional[str] = None
 
 
 class ChainSightPipeline:
@@ -98,6 +106,17 @@ class ChainSightPipeline:
     def run(self) -> PipelineResult:
         cfg = self.config
         Path(cfg.output_dir).mkdir(parents=True, exist_ok=True)
+
+        # --- Manifest: record which source video/zones this run used ---
+        # Nothing else written to outputs/ carries this (tracker.py's "_meta"
+        # only has frame_width/height) — the Streamlit demo needs it to find
+        # the source video for a given run_name (see docs/progress.md).
+        manifest_path = self._out_path("manifest")
+        self._write_json(manifest_path, {
+            "video_path": str(cfg.video_path),
+            "zones_path": str(cfg.zones_path),
+            "model_path": str(cfg.model_path),
+        })
 
         # --- Stage 1: tracking ---
         tracker = ChainSightTracker(cfg.tracker)
@@ -135,10 +154,21 @@ class ChainSightPipeline:
         rule_events_path = self._out_path("rule_events")
         self._write_json(rule_events_path, [e.to_dict() for e in rule_events])
 
+        # --- Stage 5: narration (optional) ---
+        narration_path = None
+        if cfg.narrate:
+            narrator = Narrator(GeminiClient(cfg.narration))
+            narration_result = narrator.run(str(rule_events_path))
+            narration_path = self._out_path("narration")
+            self._write_json(narration_path, narration_result)
+            narration_path = str(narration_path)
+
         return PipelineResult(
+            manifest_path=str(manifest_path),
             tracks_path=str(tracks_path),
             spatial_events_path=str(spatial_path),
             world_graph_summary_path=str(world_graph_path),
             rule_events_path=str(rule_events_path),
             rule_events=rule_events,
+            narration_path=narration_path,
         )

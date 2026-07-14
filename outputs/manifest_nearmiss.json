@@ -1,0 +1,5 @@
+{
+  "video_path": "data/staged_clips/videos/forklift_pedestrian_nearmiss.mp4",
+  "zones_path": "configs/zones_forklift_pedestrian_nearmiss.json",
+  "model_path": "models/finetuned/run2_exit_marker/weights/best.pt"
+}

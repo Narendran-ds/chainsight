@@ -8,7 +8,7 @@ ultralytics==8.2.103          # YOLOv8 training + inference
 torch==2.3.1                  # PyTorch backend (install CUDA build separately if needed)
 torchvision==0.18.1
 opencv-python==4.10.0.84
-bytetracker==0.3.2            # ByteTrack multi-object tracking
+#bytetracker==0.3.2            # ByteTrack multi-object tracking
 
 # ---- Spatial Layer -----------------------------------------------------------
 shapely==2.0.5                # Zone polygons, overlap/intersection geometry
@@ -21,15 +21,20 @@ networkx==3.3                 # Graph construction + traversal
 pydantic==2.8.2                # Structured, validated event/rule objects
 
 # ---- Narration Layer (Constrained LLM) ----------------------------------------
-google-generativeai==0.7.2     # Gemini API client
-openai==1.40.0                 # Used only if routing NVIDIA NIM via OpenAI-compatible endpoint
+#google-generativeai==0.7.2     # deprecated by Google in favor of google-genai (no more updates/fixes) — replaced below
+google-genai==1.47.0            # Gemini API client (unified SDK, src/narration/gemini_client.py)
+openai==1.40.0                  # Used only if routing NVIDIA NIM via OpenAI-compatible endpoint (nim_client.py, not yet implemented)
 
 # ---- Experiment Tracking -------------------------------------------------------
 wandb==0.17.5                  # Weights & Biases — training run tracking
 
 # ---- Demo / UI Layer -----------------------------------------------------------
-streamlit==1.37.0
-streamlit-timeline==0.0.2
+streamlit==1.50.0                # 1.37.0 predates st.dataframe's on_select row-selection API,
+                                  # which demo/components/event_timeline.py relies on for the
+                                  # rule-event timeline's click-to-jump behavior
+#streamlit-timeline==0.0.2       # unused — a very early (0.0.2), thinly-maintained component;
+                                  # native st.dataframe selection covers the timeline instead
+                                  # (see event_timeline.py's docstring)
 
 # ---- Config + Environment -------------------------------------------------------
 python-dotenv==1.0.1            # Load .env for API keys

@@ -1,0 +1,39 @@
+{
+  "events": [
+    {
+      "rule_id": "R1_RESTRICTED_ZONE_INTRUSION",
+      "rule_name": "Restricted Zone Intrusion",
+      "frame": 0,
+      "timestamp": 0.0,
+      "severity": "warning",
+      "track_ids": [
+        2
+      ],
+      "trigger": "Person 2 entered restricted zone 'restricted_forklift_pedestrian_aisle'.",
+      "evidence": {
+        "zone_name": "restricted_forklift_pedestrian_aisle",
+        "zone_type": "restricted"
+      },
+      "conclusion": "Person 2 entered restricted zone 'restricted_forklift_pedestrian_aisle' at frame 0. Reason: person detected inside a restricted zone.",
+      "narration": "At frame 0, Person 2 was detected entering the restricted zone 'restricted_forklift_pedestrian_aisle'."
+    },
+    {
+      "rule_id": "R1_RESTRICTED_ZONE_INTRUSION",
+      "rule_name": "Restricted Zone Intrusion",
+      "frame": 0,
+      "timestamp": 0.0,
+      "severity": "warning",
+      "track_ids": [
+        3
+      ],
+      "trigger": "Person 3 entered restricted zone 'restricted_forklift_pedestrian_aisle'.",
+      "evidence": {
+        "zone_name": "restricted_forklift_pedestrian_aisle",
+        "zone_type": "restricted"
+      },
+      "conclusion": "Person 3 entered restricted zone 'restricted_forklift_pedestrian_aisle' at frame 0. Reason: person detected inside a restricted zone.",
+      "narration": "At frame 0 (t=0.0s), Person 3 was detected inside the restricted zone 'restricted_forklift_pedestrian_aisle'."
+    }
+  ],
+  "summary": "Based on the analysis of the clip, the safety engine flagged two events, both categorized as Restricted Zone Intrusions. At frame 0, Person 2 and Person 3 were both detected inside the restricted zone designated as \"restricted_forklift_pedestrian_aisle.\""
+}

@@ -75,6 +75,8 @@ class GraphBuilder:
     def __init__(self, tracks_path: str, spatial_events_path: str, config: Optional[WorldGraphConfig] = None):
         self.config = config or WorldGraphConfig()
         self.tracks = self._load_tracks(tracks_path)
+        self.frame_width: Optional[int] = self._meta.get("frame_width")
+        self.frame_height: Optional[int] = self._meta.get("frame_height")
         self.spatial = self._load_spatial(spatial_events_path)
         self.valid_track_ids = filter_valid_tracks(
             self.tracks, TrackQualityConfig(min_track_frames=self.config.min_track_frames)
@@ -94,6 +96,8 @@ class GraphBuilder:
                 data = json.load(f)
         except json.JSONDecodeError as e:
             raise ValueError(f"tracks.json is not valid JSON: {e}") from e
+        self._meta = data.pop("_meta", {}) if isinstance(data, dict) else {}
+
         if not isinstance(data, dict) or not data:
             logger.warning("tracks.json is empty or malformed — no tracks to graph.")
             return data

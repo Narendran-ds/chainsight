@@ -123,12 +123,19 @@ def test_pipeline_run_produces_all_stage_outputs_and_fires_r1(tmp_path, mocker):
     mock_tracker.run.assert_called_once_with("dummy.mp4", save_annotated=None)
 
     # every stage's output file exists, with the run_name suffix applied
+    assert Path(result.manifest_path).name == "manifest_testclip.json"
     assert Path(result.tracks_path).name == "tracks_testclip.json"
     assert Path(result.spatial_events_path).name == "spatial_events_testclip.json"
     assert Path(result.world_graph_summary_path).name == "world_graph_summary_testclip.json"
     assert Path(result.rule_events_path).name == "rule_events_testclip.json"
-    for p in (result.tracks_path, result.spatial_events_path, result.world_graph_summary_path, result.rule_events_path):
+    for p in (result.manifest_path, result.tracks_path, result.spatial_events_path,
+              result.world_graph_summary_path, result.rule_events_path):
         assert Path(p).exists()
+
+    # manifest records what the demo needs to locate this run's source video/zones
+    with open(result.manifest_path) as f:
+        manifest = json.load(f)
+    assert manifest == {"video_path": "dummy.mp4", "zones_path": str(zones_path), "model_path": "dummy.pt"}
 
     # the person track (fully inside the restricted zone for all 20 frames)
     # should have flowed through spatial -> world_graph -> rules and fired R1
