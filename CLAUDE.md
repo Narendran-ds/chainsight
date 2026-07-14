@@ -260,8 +260,12 @@ demo/interview is unnecessary risk for zero benefit over pre-generating outputs)
   `st.session_state["current_frame"]` before `video_player.py` instantiates its slider in the
   same script run, jumping the scrubber to that event's frame. Chosen over the
   `streamlit-timeline` package in `requirements.txt` (now commented out) because that package
-  is a very early (0.0.2), thinly-maintained component; native selection is simpler and needed
-  bumping the pinned `streamlit` version (1.37.0 predates this dataframe API) to 1.50.0.
+  is a very early (0.0.2), thinly-maintained component; native selection is simpler. Pinned
+  `streamlit==1.50.0` as the known-good, tested version; `use_container_width=True` (not the
+  newer `width="stretch"` string API) is used on `st.dataframe`/`st.image` for compatibility —
+  a real, differently-installed Streamlit hit `TypeError: 'str' object cannot be interpreted
+  as an integer` on `width="stretch"` (that string API postdates the version installed there),
+  so avoid reintroducing it unless you've confirmed the target Streamlit version supports it.
 - **`demo/components/report_card.py`**: narration panel — clip summary + per-event narration
   from `narration_<run>.json`, or the exact `scripts/run_narration.py` command to generate it
   if that file is absent for the selected run.

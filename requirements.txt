@@ -29,9 +29,12 @@ openai==1.40.0                  # Used only if routing NVIDIA NIM via OpenAI-com
 wandb==0.17.5                  # Weights & Biases — training run tracking
 
 # ---- Demo / UI Layer -----------------------------------------------------------
-streamlit==1.50.0                # 1.37.0 predates st.dataframe's on_select row-selection API,
-                                  # which demo/components/event_timeline.py relies on for the
-                                  # rule-event timeline's click-to-jump behavior
+streamlit==1.50.0                # known-good, tested version. demo/components/event_timeline.py
+                                  # needs st.dataframe's on_select/selection_mode row-selection
+                                  # API for the rule-event timeline's click-to-jump behavior —
+                                  # if you're on a different/older Streamlit already installed
+                                  # and hit errors, run `pip install -r requirements.txt` to
+                                  # match this pin rather than assuming the code is broken
 #streamlit-timeline==0.0.2       # unused — a very early (0.0.2), thinly-maintained component;
                                   # native st.dataframe selection covers the timeline instead
                                   # (see event_timeline.py's docstring)
