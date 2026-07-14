@@ -1,0 +1,5 @@
+{
+  "video_path": "data/staged_clips/videos/blocked_exit.mp4",
+  "zones_path": "configs/zones_blocked_exit.json",
+  "model_path": "models/finetuned/run2_exit_marker/weights/best.pt"
+}
