@@ -1,4 +1,8 @@
 {
+  "_meta": {
+    "frame_width": 768,
+    "frame_height": 432
+  },
   "1": {
     "class_id": 16,
     "class_name": "exit_zone_marker",

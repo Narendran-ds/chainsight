@@ -93,7 +93,49 @@ decision can be traced to explicit code logic, not learned weights.
 
 ---
 
-## 4. Correlation vs. Causation
+## 5. Rule Engine — R2 Near-Miss Distance Calibration
+
+`proximity_threshold_px` (spatial layer) and `near_miss_distance_px` (R2) are
+now normalized against the clip's actual frame resolution (`src/utils/video_io.py`'s
+`resolution_scale()`, calibrated at a 1920px reference width — see
+`tracker.py`'s `"_meta"` export and `analyzer.py`/`engine.py`'s use of it).
+This was needed because the original absolute-pixel thresholds (150px / 100px)
+were tuned against ~1080p footage and silently never fired on 4K clips, where
+the same real-world distance spans far more pixels. The fix is confirmed
+working symmetrically: it scales thresholds *up* for higher-resolution clips
+and *down* for lower-resolution ones (e.g. 0.40x on the 768px-wide
+`blocked_exit.mp4`).
+
+**Known remaining limitation:** resolution scaling only corrects for sensor
+resolution, not camera framing/distance-to-scene. On
+`forklift_pedestrian_nearmiss.mp4` (4K, `run2_exit_marker`), R2 still does not
+fire — verified by inspecting the actual frames
+(`data/staged_clips/extracted_frames/nearmiss_wide/frame_00410.jpg`, the
+clip's closest tracked approach): the forklift and tracked pedestrian sit on
+opposite sides of an open aisle, never in genuine near-collision, across all
+525 frames. The minimum tracked centroid distance anywhere in the clip is
+~1060–1270px, well beyond even the resolution-corrected 300px threshold. This
+is a wide establishing shot where the forklift occupies roughly 1/4 of frame
+width, so a real ~1–1.5m close call still spans 1000+ raw pixels — a gap
+resolution normalization alone cannot close without also producing false
+positives on more tightly-framed footage.
+
+**Decision:** this is treated as a camera-framing/test-clip limitation, not a
+pipeline bug — proximity observations went from 0 (pre-fix, unscaled) to 24
+(post-fix) on this clip, confirming the scaling itself behaves correctly; R2
+just has no genuine near-miss instant to catch in this specific recording.
+Thresholds are deliberately not inflated further to force a fire, since that
+would risk false near-misses on footage where the camera sits closer to the
+action.
+
+**Recommended next step (not yet done):** normalize `near_miss_distance_px`
+against detected object size (e.g. a multiple of the forklift/person bbox
+diagonal) instead of frame width, so R2 is robust to camera zoom/distance as
+well as resolution. Deferred as a larger design change outside current scope.
+
+---
+
+## 6. Correlation vs. Causation
 
 ChainSight's rule engine is explicitly designed to describe **observed
 spatial-temporal patterns** (e.g. "person entered restricted zone while
@@ -104,4 +146,4 @@ it does not determine fault or root cause.
 
 ---
 
-*Last updated: 2026-07-10, following run2_exit_marker evaluation.*
+*Last updated: 2026-07-13, following the R2 resolution-normalization fix.*

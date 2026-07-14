@@ -32,6 +32,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
 from ..spatial.zones import load_zones
+from ..utils.video_io import resolution_scale
 from ..world_graph.query import WorldQuery
 from .events import RuleEvent
 from .rule_definitions import RuleEngineConfig, bbox_overlap_ratio
@@ -54,6 +55,15 @@ class RuleEngine:
         self.zone_types: Dict[str, str] = {z.name: z.zone_type for z in zones}
 
         self._frame_bbox_index = self._build_frame_bbox_index()
+
+        # near_miss_distance_px is calibrated at video_io.REFERENCE_FRAME_WIDTH
+        # (see rule_definitions.py) — scale it to this clip's actual
+        # resolution, using the same frame_width the spatial layer used to
+        # scale proximity_threshold_px, so the two stay consistent (a "near"
+        # pair recorded in spatial_events.json was only ever recorded within
+        # spatial's own scaled proximity threshold in the first place).
+        self._resolution_scale = resolution_scale(self.builder.frame_width)
+        self.near_miss_distance_px = self.config.near_miss_distance_px * self._resolution_scale
 
     # --- setup: per-frame bbox lookup, built from ALL tracks (unfiltered) ---
     def _build_frame_bbox_index(self) -> Dict[int, Dict[int, dict]]:
@@ -143,7 +153,7 @@ class RuleEngine:
                 for near in event.get("nearby_tracks", []):
                     if near["class_name"] != "forklift":
                         continue
-                    if near["distance_px"] > self.config.near_miss_distance_px:
+                    if near["distance_px"] > self.near_miss_distance_px:
                         continue
                     active_pairs.add((event["track_id"], near["track_id"]))
 
@@ -177,13 +187,13 @@ class RuleEngine:
                             f"in a restricted zone for {consecutive_count[pair]}+ consecutive frames."
                         ),
                         evidence={
-                            "distance_threshold_px": self.config.near_miss_distance_px,
+                            "distance_threshold_px": self.near_miss_distance_px,
                             "consecutive_frames": consecutive_count[pair],
                             "gap_tolerance_frames": self.config.near_miss_gap_tolerance_frames,
                         },
                         conclusion=(
                             f"Person {person_id} and forklift {forklift_id} remained within "
-                            f"{self.config.near_miss_distance_px}px of each other inside a "
+                            f"{self.near_miss_distance_px:.0f}px of each other inside a "
                             f"restricted zone for at least "
                             f"{self.config.near_miss_min_consecutive_frames} consecutive frames "
                             f"(brief gaps of up to {self.config.near_miss_gap_tolerance_frames} "

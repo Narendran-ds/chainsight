@@ -11,6 +11,10 @@ logger = logging.getLogger("chainsight.spatial")
 
 @dataclass
 class SpatialConfig:
+    # Calibrated at video_io.REFERENCE_FRAME_WIDTH (1920px). analyzer.py scales
+    # this by the clip's actual frame_width (from tracks.json's "_meta", set by
+    # tracker.py) before use, so it stays meaningful on 4K footage instead of
+    # silently requiring 1000+px real distances to ever register as "near".
     proximity_threshold_px: float = 150.0
     zone_overlap_threshold: float = 0.1
     use_bbox_for_zones: bool = True

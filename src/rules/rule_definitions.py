@@ -23,7 +23,10 @@ class RuleEngineConfig:
     # NOTE: this must be <= spatial.py's SpatialConfig.proximity_threshold_px
     # (default 150px) — a "near" edge only exists in spatial_events.json at
     # all within that threshold, so setting this higher than that value
-    # would silently never fire.
+    # would silently never fire. Both values are calibrated at
+    # video_io.REFERENCE_FRAME_WIDTH; RuleEngine scales this by the same
+    # frame_width analyzer.py used, so the invariant holds regardless of the
+    # clip's actual resolution.
     near_miss_distance_px: float = 100.0
     near_miss_min_consecutive_frames: int = 10
     # Single-frame detector/tracker flicker (a distance briefly ticking a

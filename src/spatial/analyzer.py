@@ -25,6 +25,7 @@ from shapely.geometry import Point
 
 from .zones import Zone, SpatialConfig, load_zones
 from .overlap import zones_containing_bbox
+from ..utils.video_io import resolution_scale
 
 try:
     from shapely.strtree import STRtree
@@ -88,9 +89,23 @@ class SpatialAnalyzer:
             logger.warning("tracks.json is empty or malformed — no tracks to analyze.")
         return data
 
+    @staticmethod
+    def _pop_meta(tracks_data: dict) -> dict:
+        """Split tracker.py's "_meta" (frame_width/frame_height) out of the
+        track-id-keyed dict. Missing on tracks.json produced before this
+        field existed — callers must tolerate an empty dict here."""
+        return tracks_data.pop("_meta", {}) if isinstance(tracks_data, dict) else {}
+
     # --- main analysis ---
     def analyze(self, tracks_path: str) -> Tuple[Dict[int, List[SpatialEvent]], List[ZoneTransitionEvent]]:
         tracks_data = self.load_tracks(tracks_path)
+        meta = self._pop_meta(tracks_data)
+        scale = resolution_scale(meta.get("frame_width"))
+        if scale != 1.0:
+            logger.info(
+                f"Scaling proximity_threshold_px by {scale:.2f}x for frame_width="
+                f"{meta.get('frame_width')} (reference width used to calibrate the default)."
+            )
 
         # frame_idx -> list of (track_id, class_name, timestamp, bbox, centroid)
         frame_buckets: Dict[int, List[tuple]] = {}
@@ -114,7 +129,8 @@ class SpatialAnalyzer:
         zone_transitions: List[ZoneTransitionEvent] = []
         prev_zones_by_track: Dict[int, Set[str]] = {}
 
-        threshold_sq = self.config.proximity_threshold_px ** 2  # (2) avoid sqrt in the hot loop
+        proximity_threshold_px = self.config.proximity_threshold_px * scale
+        threshold_sq = proximity_threshold_px ** 2  # (2) avoid sqrt in the hot loop
 
         for frame_idx in sorted(frame_buckets.keys()):
             entries = frame_buckets[frame_idx]
@@ -127,7 +143,7 @@ class SpatialAnalyzer:
                 tree = STRtree(centroid_points)
                 for i, pt in enumerate(centroid_points):
                     track_id_i = entries[i][0]
-                    candidate_idxs = tree.query(pt.buffer(self.config.proximity_threshold_px))
+                    candidate_idxs = tree.query(pt.buffer(proximity_threshold_px))
                     for j in candidate_idxs:
                         j = int(j)
                         if j <= i:

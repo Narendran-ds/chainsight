@@ -1,4 +1,8 @@
 {
+  "_meta": {
+    "frame_width": 3840,
+    "frame_height": 2160
+  },
   "1": {
     "class_id": 0,
     "class_name": "forklift",

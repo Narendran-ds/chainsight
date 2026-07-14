@@ -1,0 +1,44 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "node_type": "track",
+      "class_name": "exit_zone_marker",
+      "first_seen_frame": 0,
+      "last_seen_frame": 198,
+      "age_frames": 199,
+      "duration_seconds": 7.92,
+      "average_speed": 20.7907,
+      "status": "alive",
+      "id": 1
+    },
+    {
+      "node_type": "track",
+      "class_name": "box",
+      "first_seen_frame": 90,
+      "last_seen_frame": 164,
+      "age_frames": 75,
+      "duration_seconds": 2.96,
+      "average_speed": 33.7711,
+      "status": "dead",
+      "id": 3
+    },
+    {
+      "node_type": "zone",
+      "id": "exit_zone"
+    }
+  ],
+  "links": [
+    {
+      "relation": "visited_zone",
+      "transition_count": 1,
+      "frame_count": 49,
+      "first_frame": 90,
+      "last_frame": 164,
+      "source": 3,
+      "target": "exit_zone"
+    }
+  ]
+}

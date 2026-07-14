@@ -217,6 +217,8 @@ class ChainSightTracker:
 
         self.tracks: Dict[int, Track] = {}
         self.class_names = self.model.names  # {id: name}
+        self.frame_width: Optional[int] = None
+        self.frame_height: Optional[int] = None
 
     def run(self, video_path: str, save_annotated: Optional[str] = None) -> Dict[int, Track]:
         """
@@ -228,6 +230,7 @@ class ChainSightTracker:
             raise FileNotFoundError(f"Video not found: {video_path}")
 
         fps = self._get_fps(video_path)
+        self.frame_width, self.frame_height = self._get_frame_size(video_path)
         writer = None
         if save_annotated:
             writer = self._make_writer(video_path, save_annotated, fps)
@@ -306,6 +309,15 @@ class ChainSightTracker:
         cap.release()
         return fps
 
+    def _get_frame_size(self, video_path: str) -> tuple:
+        cap = cv2.VideoCapture(video_path)
+        if not cap.isOpened():
+            raise FileNotFoundError(f"Cannot open video: {video_path}")
+        w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+        h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        cap.release()
+        return w, h
+
     def _make_writer(self, video_path: str, out_path: str, fps: float):
         cap = cv2.VideoCapture(video_path)
         w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
@@ -317,8 +329,15 @@ class ChainSightTracker:
 
     # --- export (12) ---
     def to_json_serializable(self) -> dict:
-        """Export tracks for spatial.py / world_graph.py consumption."""
-        out = {}
+        """
+        Export tracks for spatial.py / world_graph.py consumption. Includes a
+        "_meta" key (frame_width/frame_height) alongside the numeric track-id
+        keys — consumers must pop/skip it before iterating tracks by id (see
+        SpatialAnalyzer.load_tracks / GraphBuilder._load_tracks). This is how
+        downstream stages normalize pixel-distance thresholds against the
+        clip's actual resolution instead of assuming ~1080p.
+        """
+        out = {"_meta": {"frame_width": self.frame_width, "frame_height": self.frame_height}}
         for tid, t in self.tracks.items():
             out[str(tid)] = {
                 "class_id": t.class_id,
