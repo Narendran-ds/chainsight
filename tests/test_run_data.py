@@ -109,3 +109,22 @@ def test_frame_range_spans_all_tracks():
 
 def test_frame_range_zero_for_no_tracks():
     assert run_data.frame_range({}) == (0, 0)
+
+
+def test_derive_fps_recovers_from_frame_timestamp_ratio():
+    # tracker.py sets timestamp = round(frame / fps, 4); at 24fps, frame 480 -> 20.0s
+    tracks = {"1": {"history": [{"frame": 0, "timestamp": 0.0}, {"frame": 480, "timestamp": 20.0}]}}
+    assert run_data.derive_fps(tracks) == 24.0
+
+
+def test_derive_fps_uses_largest_frame_across_all_tracks():
+    tracks = {
+        "1": {"history": [{"frame": 10, "timestamp": 0.4167}]},   # ~24fps, low precision
+        "2": {"history": [{"frame": 1000, "timestamp": 41.6667}]},  # ~24fps, high precision
+    }
+    assert round(run_data.derive_fps(tracks), 2) == 24.0
+
+
+def test_derive_fps_falls_back_to_default_when_no_valid_observation():
+    assert run_data.derive_fps({}) == 25.0
+    assert run_data.derive_fps({"1": {"history": [{"frame": 0, "timestamp": 0.0}]}}, default=30.0) == 30.0

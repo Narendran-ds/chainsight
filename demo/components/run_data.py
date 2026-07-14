@@ -101,3 +101,24 @@ def frame_range(tracks: Dict[str, dict]) -> Tuple[int, int]:
     """(min_frame, max_frame) across all tracks' history; (0, 0) if empty."""
     frames = [obs["frame"] for track in tracks.values() for obs in track.get("history", [])]
     return (min(frames), max(frames)) if frames else (0, 0)
+
+
+def derive_fps(tracks: Dict[str, dict], default: float = 25.0) -> float:
+    """
+    Recovers the clip's fps from tracks.json's frame/timestamp relationship
+    (tracker.py sets timestamp = round(frame / fps, 4) for every observation)
+    instead of requiring a dedicated fps field in "_meta" — lets frame<->time
+    conversion work on tracks.json files written before this was needed.
+    Uses the observation with the largest frame index for best precision
+    against the timestamp's 4-decimal rounding.
+    """
+    best: Optional[Tuple[int, float]] = None
+    for track in tracks.values():
+        for obs in track.get("history", []):
+            frame, ts = obs.get("frame", 0), obs.get("timestamp", 0)
+            if frame > 0 and ts > 0 and (best is None or frame > best[0]):
+                best = (frame, ts)
+    if best is None:
+        return default
+    frame, ts = best
+    return frame / ts

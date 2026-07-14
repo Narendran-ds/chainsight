@@ -11,6 +11,9 @@ from . import run_data
 
 
 def render(output_dir: str) -> str:
+    st.sidebar.header("⚙️ Controls")
+    st.sidebar.divider()
+
     runs = run_data.discover_runs(output_dir)
     if not runs:
         st.sidebar.error(

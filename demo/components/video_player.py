@@ -1,16 +1,22 @@
 """
 video_player.py — ChainSight demo, frame-by-frame scrubber
-Renders a frame-index slider and the corresponding frame with bboxes/zone
-polygons drawn live via src/utils/visualization.py (never a replay of
-tracker.py's pre-rendered --annotated video — see CLAUDE.md's Demo layer
-section for why). Falls back to a blank canvas if the run has no manifest
-(video_path unknown) or the source video file can't be opened — a run
-assembled from the individual scripts/run_*.py calls may never have had a
-manifest written.
+Renders a frame-index slider (plus a "jump to frame" and "jump to time"
+number input, kept in sync with it) and the corresponding frame with
+bboxes/zone polygons drawn live via src/utils/visualization.py (never a
+replay of tracker.py's pre-rendered --annotated video — see CLAUDE.md's
+Demo layer section for why). Falls back to a blank canvas if the run has
+no manifest (video_path unknown) or the source video file can't be opened
+— a run assembled from the individual scripts/run_*.py calls may never
+have had a manifest written.
 
 st.session_state["current_frame"] is the single source of truth for the
-selected frame, shared with event_timeline.py (clicking a rule event
-updates it before this slider is instantiated in the same script run).
+selected frame, shared with event_timeline.py (clicking a rule event sets
+it before this module's widgets are instantiated in the same script run).
+The slider/frame-input/time-input each have their own widget key
+(Streamlit doesn't allow two widgets to share one key); on_change
+callbacks below keep all three, plus "current_frame", in lockstep — see
+the module docstring in run_data.py's derive_fps() for how fps (needed
+for the time<->frame conversion) is recovered without a schema change.
 """
 
 import sys
@@ -43,6 +49,17 @@ def _read_frame(video_path: Optional[str], frame_idx: int, width: int, height: i
     return blank_canvas(width, height)
 
 
+def _sync(frame: int, min_frame: int, max_frame: int, fps: float) -> None:
+    """Canonical update: clamps to range, writes "current_frame" plus all
+    three widgets' own keys, so whichever widget didn't trigger this still
+    picks up the new value when it's instantiated on the next run."""
+    frame = max(min_frame, min(int(round(frame)), max_frame))
+    st.session_state["current_frame"] = frame
+    st.session_state["frame_slider"] = frame
+    st.session_state["frame_number_input"] = frame
+    st.session_state["time_number_input"] = round(frame / fps, 2) if fps else 0.0
+
+
 def render(
     frame_index: Dict[int, List[dict]],
     zones: List[dict],
@@ -50,15 +67,42 @@ def render(
     frame_meta: Dict[str, Optional[int]],
     min_frame: int,
     max_frame: int,
+    fps: float,
 ) -> None:
     st.subheader("Frame viewer")
 
     st.session_state.setdefault("current_frame", min_frame)
-    # Clamp in case a previous run's selection (e.g. from event_timeline.py)
-    # is out of range for a differently-sized run.
-    st.session_state["current_frame"] = max(min_frame, min(st.session_state["current_frame"], max_frame))
+    # Re-propagate to each widget's own key before instantiating them, so an
+    # external jump (event_timeline.py setting "current_frame" directly from
+    # a rule-event row click) reaches the slider and both number inputs too.
+    _sync(st.session_state["current_frame"], min_frame, max_frame, fps)
 
-    st.slider("Frame", min_value=min_frame, max_value=max(max_frame, min_frame), key="current_frame")
+    def _on_slider():
+        _sync(st.session_state["frame_slider"], min_frame, max_frame, fps)
+
+    def _on_frame_input():
+        _sync(st.session_state["frame_number_input"], min_frame, max_frame, fps)
+
+    def _on_time_input():
+        _sync(st.session_state["time_number_input"] * fps, min_frame, max_frame, fps)
+
+    st.slider(
+        "Frame", min_value=min_frame, max_value=max(max_frame, min_frame),
+        key="frame_slider", on_change=_on_slider,
+    )
+
+    jump_col1, jump_col2 = st.columns(2)
+    with jump_col1:
+        st.number_input(
+            "Jump to frame", min_value=min_frame, max_value=max(max_frame, min_frame),
+            step=1, key="frame_number_input", on_change=_on_frame_input,
+        )
+    with jump_col2:
+        st.number_input(
+            "Jump to time (s)", min_value=0.0, max_value=round(max(max_frame, min_frame) / fps, 2),
+            step=0.1, format="%.2f", key="time_number_input", on_change=_on_time_input,
+        )
+
     frame_idx = st.session_state["current_frame"]
 
     width = frame_meta.get("frame_width") or 1280
